@@ -40,9 +40,9 @@ func process_input(delta):
 		zAdjusted = true
 	if !zAdjusted:
 		if levelNode.rotation.z > 0:
-			levelNode.rotation.z -= delta
+			levelNode.rotation.z -= diff
 		if levelNode.rotation.z < 0:
-			levelNode.rotation.z += delta
+			levelNode.rotation.z += diff
 	
 	var xAdjusted = false
 	if Input.is_action_pressed("ui_up"):
