@@ -15,6 +15,10 @@ func _ready():
 	next_level()
 
 func next_level():
+	if levelNode:
+		remove_child(levelNode)
+		levelNode.queue_free()
+
 	currentLevel += 1
 	levelNode = levels[currentLevel].instantiate()
 	add_child(levelNode)
