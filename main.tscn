@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://cowhv7yymyu56"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_8kahe"]
+[ext_resource type="Texture2D" uid="uid://b777jxitnksy" path="res://icon.svg" id="1_fvy0h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jixgh"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wq5r0"]
+albedo_color = Color(0.113725, 0.356863, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ktgxr"]
+material = SubResource("StandardMaterial3D_wq5r0")
+size = Vector3(50, 1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpmge"]
+albedo_texture = ExtResource("1_fvy0h")
+
+[sub_resource type="SphereMesh" id="SphereMesh_31tb5"]
+material = SubResource("StandardMaterial3D_qpmge")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0yvop"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_8kahe")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 15, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_jixgh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_ktgxr")
+
+[node name="Sphere" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+mass = 10.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sphere"]
+mesh = SubResource("SphereMesh_31tb5")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sphere"]
+shape = SubResource("SphereShape3D_0yvop")
