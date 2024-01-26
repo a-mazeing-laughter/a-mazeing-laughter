@@ -60,5 +60,3 @@ func process_input(delta):
 			levelNode.rotation.x -= diff
 		if levelNode.rotation.x < 0:
 			levelNode.rotation.x += diff
-	
-	print_debug("x", levelNode.rotation.x, "z", levelNode.rotation.z)
