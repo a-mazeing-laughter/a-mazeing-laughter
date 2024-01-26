@@ -7,11 +7,13 @@ var currentLevel = -1
 ]
 
 var maxRotation = 0.3
+var rotationSpeed = 0.75
+var inputVector = Vector3()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	next_level()
-	
+
 func next_level():
 	currentLevel += 1
 	levelNode = levels[currentLevel].instantiate()
@@ -19,31 +21,35 @@ func next_level():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	process_input(delta)
+	inputVector = getInputVector()
 
 func _physics_process(delta):
-	pass
+	adjustRotation(delta)
 
-func process_input(delta):
-	var diff = delta * 3
-	
-	var zAdjusted = false
+func getInputVector():
+	var vector = Vector3()
+
 	if Input.is_action_pressed("ui_left"):
-		levelNode.rotation.z = lerp(levelNode.rotation.z, maxRotation, diff)
-		zAdjusted = true
-	if Input.is_action_pressed("ui_right"):
-		levelNode.rotation.z = lerp(levelNode.rotation.z, -maxRotation, diff)
-		zAdjusted = true
-	
-	var xAdjusted = false
-	if Input.is_action_pressed("ui_up"):
-		levelNode.rotation.x = lerp(levelNode.rotation.x, -maxRotation, diff)
-		xAdjusted = true
-	if Input.is_action_pressed("ui_down"):
-		levelNode.rotation.x = lerp(levelNode.rotation.x, maxRotation, diff)
-		xAdjusted = true
+		vector.z = 1
+	elif Input.is_action_pressed("ui_right"):
+		vector.z = -1
 
-	if !zAdjusted:
-		levelNode.rotation.z = lerp(levelNode.rotation.z, 0.0, diff)
-	if !xAdjusted:
+	if Input.is_action_pressed("ui_up"):
+		vector.x = -1
+	elif Input.is_action_pressed("ui_down"):
+		vector.x = 1
+
+	return vector
+
+func adjustRotation(delta):
+	var diff = delta * rotationSpeed
+
+	if inputVector.x == 0:
 		levelNode.rotation.x = lerp(levelNode.rotation.x, 0.0, diff)
+	else:
+		levelNode.rotation.x = clamp(levelNode.rotation.x + (diff * inputVector.x), -maxRotation, maxRotation)
+
+	if inputVector.z == 0:
+		levelNode.rotation.z = lerp(levelNode.rotation.z, 0.0, diff)
+	else:
+		levelNode.rotation.z = clamp(levelNode.rotation.z + (diff * inputVector.z), -maxRotation, maxRotation)
