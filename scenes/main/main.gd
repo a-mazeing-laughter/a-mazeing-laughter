@@ -6,6 +6,8 @@ var currentLevel = -1
 	preload("res://scenes/levels/level-1.tscn")
 ]
 
+@onready var player = get_node("Sphere")
+
 var maxRotation = 0.3
 var rotationSpeed = 0.75
 var inputVector = Vector3()
@@ -31,6 +33,10 @@ func _physics_process(delta):
 	adjustRotation(delta)
 
 func getInputVector():
+	if check_lose():
+		# YOU LOSE!
+		return
+
 	var vector = Vector3()
 
 	if Input.is_action_pressed("ui_left"):
@@ -57,3 +63,7 @@ func adjustRotation(delta):
 		levelNode.rotation.z = lerp(levelNode.rotation.z, 0.0, diff)
 	else:
 		levelNode.rotation.z = clamp(levelNode.rotation.z + (diff * inputVector.z), -maxRotation, maxRotation)
+
+func check_lose():
+	var sphereY = player.position.y;
+	return sphereY <= -50
