@@ -7,12 +7,14 @@ albedo_texture = ExtResource("1_6l34w")
 
 [sub_resource type="SphereMesh" id="SphereMesh_31tb5"]
 material = SubResource("StandardMaterial3D_qpmge")
+radius = 0.25
+height = 0.5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0yvop"]
 
 [node name="Sphere" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
-mass = 10.0
+mass = 1000.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_31tb5")
