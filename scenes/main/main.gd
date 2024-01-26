@@ -25,38 +25,25 @@ func _physics_process(delta):
 	pass
 
 func process_input(delta):
-	var diff = delta * 0.75
+	var diff = delta * 3
 	
 	var zAdjusted = false
 	if Input.is_action_pressed("ui_left"):
-		levelNode.rotation.z += diff
-		if levelNode.rotation.z > maxRotation:
-			levelNode.rotation.z = maxRotation
+		levelNode.rotation.z = lerp(levelNode.rotation.z, maxRotation, diff)
 		zAdjusted = true
 	if Input.is_action_pressed("ui_right"):
-		levelNode.rotation.z -= diff
-		if levelNode.rotation.z < -maxRotation:
-			levelNode.rotation.z = -maxRotation
+		levelNode.rotation.z = lerp(levelNode.rotation.z, -maxRotation, diff)
 		zAdjusted = true
-	if !zAdjusted:
-		if levelNode.rotation.z > 0:
-			levelNode.rotation.z -= diff
-		if levelNode.rotation.z < 0:
-			levelNode.rotation.z += diff
 	
 	var xAdjusted = false
 	if Input.is_action_pressed("ui_up"):
-		levelNode.rotation.x -= diff
-		if levelNode.rotation.x < -maxRotation:
-			levelNode.rotation.x = -maxRotation
+		levelNode.rotation.x = lerp(levelNode.rotation.x, -maxRotation, diff)
 		xAdjusted = true
 	if Input.is_action_pressed("ui_down"):
-		levelNode.rotation.x += diff
-		if levelNode.rotation.x > maxRotation:
-			levelNode.rotation.x = maxRotation
+		levelNode.rotation.x = lerp(levelNode.rotation.x, maxRotation, diff)
 		xAdjusted = true
+
+	if !zAdjusted:
+		levelNode.rotation.z = lerp(levelNode.rotation.z, 0.0, diff)
 	if !xAdjusted:
-		if levelNode.rotation.x > 0:
-			levelNode.rotation.x -= diff
-		if levelNode.rotation.x < 0:
-			levelNode.rotation.x += diff
+		levelNode.rotation.x = lerp(levelNode.rotation.x, 0.0, diff)
