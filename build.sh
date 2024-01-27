@@ -7,6 +7,7 @@ mkdir -p dist
 
 echo 'Building for web ...'
 godot --headless --no-window --export-release "HTML5" dist/index.html
+cp enable-threads.js dist/
 echo 'done.'
 
 echo 'Building for linux ...'

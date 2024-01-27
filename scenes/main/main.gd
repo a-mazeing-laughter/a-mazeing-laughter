@@ -38,7 +38,8 @@ func _physics_process(delta):
 	follow_camera()
 
 func follow_camera():
-	camera.position = player.position + Vector3(0, 30, 10)
+	camera.position.x = player.position.x
+	camera.position.z = player.position.z + 10
 
 func getInputVector():
 	var vector = Vector3()
@@ -76,3 +77,7 @@ func _on_sphere_body_entered(body):
 		# YOU LOSE
 		get_tree().root.add_child(loosingScene)
 		get_tree().paused = true
+	
+	if body.is_in_group("collectibles"):
+		body.get_parent().remove_child(body)
+		body.queue_free()
