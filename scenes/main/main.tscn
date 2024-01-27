@@ -12,7 +12,7 @@ script = ExtResource("1_d6v31")
 transform = Transform3D(1, 0, 0, 0, 0.34202, 0.939693, 0, -0.939693, 0.34202, 0, 30, 10)
 top_level = true
 projection = 1
-size = 10.0
+size = 20.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 6.33815e-06, -145)
