@@ -1,3 +1,3 @@
 - clowny.svg by [twemoji](https://github.com/twitter/twemoji) is licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - "Silly Fun" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 3.0 http://creativecommons.org/licenses/by/3.0
-- https://github.com/krzmig/godot-simple-sky-project
+- Sky Shader copied from: https://github.com/krzmig/godot-simple-sky-project
