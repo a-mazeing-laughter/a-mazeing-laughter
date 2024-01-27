@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddhwewn4xrjue"]
+[gd_scene load_steps=3 format=3 uid="uid://ddhwewn4xrjue"]
 
 [ext_resource type="Script" path="res://scenes/main/loose.gd" id="1_d5llr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rtdg"]
+size = Vector2(1024, 600)
 
 [node name="Loose" type="Node2D"]
 script = ExtResource("1_d5llr")
@@ -8,7 +11,13 @@ script = ExtResource("1_d5llr")
 [node name="LoosingText" type="RichTextLabel" parent="."]
 offset_left = 317.0
 offset_top = 275.0
-offset_right = 481.0
-offset_bottom = 336.0
-text = "     YOU LOOSE!
-Press R to restart"
+offset_right = 488.0
+offset_bottom = 372.0
+text = "
+         YOU LOOSE!
+    Press R to restart"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="LoosingText"]
+shape = SubResource("RectangleShape2D_2rtdg")
+passby_press = true
+action = "ui_r_key"
