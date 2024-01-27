@@ -8,10 +8,10 @@ albedo_texture = ExtResource("1_3jshn")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_bcg6l"]
 material = SubResource("StandardMaterial3D_6tpq3")
-height = 0.1
+height = 0.5
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5vc0i"]
-height = 0.1
+height = 0.5
 
 [node name="Collectible" type="StaticBody3D"]
 
