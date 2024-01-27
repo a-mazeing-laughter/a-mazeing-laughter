@@ -16,7 +16,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -41.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, -4.5, -10.5)
 
 [node name="Avoidable2" parent="." groups=["avoidables", "collectibles"] instance=ExtResource("3_wnsi5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -30.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.5, -30.5)
 
 [node name="Block" parent="." instance=ExtResource("4_sul1x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -5, -3)
@@ -81,8 +81,8 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 22.5, 
 [node name="RampRound3" parent="." instance=ExtResource("5_ngqk6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, -5, -33)
 
-[node name="Collectible2" parent="." instance=ExtResource("2_l8g8s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.324, 0, -10.5)
+[node name="Collectible2" parent="." groups=["collectibles"] instance=ExtResource("2_l8g8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0.5, -10.5)
 
-[node name="Collectible3" parent="." instance=ExtResource("2_l8g8s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -25.5)
+[node name="Collectible3" parent="." groups=["collectibles"] instance=ExtResource("2_l8g8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0.5, -25.5)
