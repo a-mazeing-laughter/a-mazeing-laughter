@@ -1,3 +1,8 @@
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 name: "godot-ci export"
 on:
   push:
@@ -12,7 +17,6 @@ env:
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.2.1
@@ -23,16 +27,21 @@ jobs:
           lfs: true
       - name: Setup
         run: |
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+          mkdir -p /github/home/.config /github/home/.local/share
+          cp -r /root/.config/godot/ ~/.config/
+          cp -r /root/.local/share/godot/ ~/.local/share/
+          mv ~/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
       - name: Build
         run: ./build.sh
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          name: all-builds
           path: dist/
-      - name: Deploy to GitHub Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v4
-        with:
-          folder: dist/
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
