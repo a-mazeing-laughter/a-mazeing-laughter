@@ -6,8 +6,9 @@ var currentLevel = -1
 	preload("res://scenes/levels/level-1.tscn"),
 	preload("res://scenes/levels/level-2.tscn"),
 	preload("res://scenes/levels/level-3.tscn"),
+	preload("res://scenes/levels/level-4.tscn"),
 	preload("res://scenes/levels/level-5.tscn"),
-	preload("res://scenes/levels/level-6.tscn"),
+	preload("res://scenes/levels/level-6.tscn")
 ]
 
 @onready var player = get_node("Sphere")
