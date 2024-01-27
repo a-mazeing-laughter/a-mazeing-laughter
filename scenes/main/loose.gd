@@ -11,6 +11,7 @@ func _process(_delta):
 	if Input.is_action_pressed("ui_r_key"):
 		self.queue_free()
 		get_tree().reload_current_scene()
+		get_tree().paused = false
 
 
 func centerText():
