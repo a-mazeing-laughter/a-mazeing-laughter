@@ -1,6 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1hesipg1fccy"]
+[gd_scene load_steps=5 format=3 uid="uid://b1hesipg1fccy"]
 
 [ext_resource type="ArrayMesh" uid="uid://wbda52s3felq" path="res://assets/models/ramp.obj" id="1_03xni"]
+[ext_resource type="Texture2D" uid="uid://dlcrnt7x4bt86" path="res://assets/ground.png" id="1_4imos"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p6ub1"]
+shading_mode = 0
+albedo_texture = ExtResource("1_4imos")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 150.0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n2sfk"]
 points = PackedVector3Array(0, 5, 0, 0, 0, 4.99944, 0, 0, 0, -5, 5, 0, -5, 0, 4.99944, -5, 0, 0)
@@ -9,6 +16,7 @@ points = PackedVector3Array(0, 5, 0, 0, 0, 4.99944, 0, 0, 0, -5, 5, 0, -5, 0, 4.
 
 [node name="Ramp" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_p6ub1")
 mesh = ExtResource("1_03xni")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

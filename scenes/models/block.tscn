@@ -1,6 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://qale2mubjisg"]
+[gd_scene load_steps=5 format=3 uid="uid://qale2mubjisg"]
 
+[ext_resource type="Texture2D" uid="uid://dlcrnt7x4bt86" path="res://assets/ground.png" id="1_altpj"]
 [ext_resource type="ArrayMesh" uid="uid://cxe1tn1m4jx7h" path="res://assets/models/block.obj" id="1_tv5g0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sh1h"]
+shading_mode = 0
+albedo_texture = ExtResource("1_altpj")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 150.0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oectu"]
 points = PackedVector3Array(5, 4.99944, 4.99944, 5, 4.99944, 0, 0, 4.99944, 4.99944, 5, 0, 4.99944, 5, 0, 0, 0, 4.99944, 0, 0, 0, 4.99944, 0, 0, 0)
@@ -8,6 +15,7 @@ points = PackedVector3Array(5, 4.99944, 4.99944, 5, 4.99944, 0, 0, 4.99944, 4.99
 [node name="Block" type="StaticBody3D"]
 
 [node name="Block" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_2sh1h")
 mesh = ExtResource("1_tv5g0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
