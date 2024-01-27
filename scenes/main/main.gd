@@ -72,7 +72,7 @@ func getInputVector():
 
 func adjustRotation(delta):
 	spatial.position = player.position
-	var diff = delta * 0.7
+	var diff = delta * 0.5
 
 	if inputVector.x == 0:
 		spatial.rotation.z = lerp(spatial.rotation.z, 0.0, diff)
@@ -82,7 +82,7 @@ func adjustRotation(delta):
 	if inputVector.z == 0:
 		spatial.rotation.x = lerp(spatial.rotation.x, 0.0, diff)
 	else:
-		spatial.rotation.x = clamp(spatial.rotation.x + (diff * inputVector.z), -maxRotation, maxRotation)
+		spatial.rotation.x = clamp(spatial.rotation.x + (diff * -inputVector.z), -maxRotation, maxRotation)
 
 
 func game_over():
