@@ -10,6 +10,7 @@ var currentLevel = -1
 @onready var player = get_node("Sphere")
 @onready var camera : Camera3D = get_node("Camera3D")
 @onready var boundary = get_node("WorldBoundary")
+@onready var laughometer = get_node("Laughometer")
 
 @onready var initialPlayerPosition = player.position
 
@@ -19,6 +20,7 @@ var inputVector
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	laughometer.value = 30
 	next_level()
 
 func next_level():
@@ -87,12 +89,15 @@ func adjustRotation(delta):
 	else:
 		camera.rotation.x = clamp(camera.rotation.x + (diff * -1 * inputVector.z), initialCameraRotation - maxRotation, initialCameraRotation + maxRotation)
 
+func game_over():
+	var loosingScene = preload("res://scenes/main/loose.tscn").instantiate()
+	get_tree().root.add_child(loosingScene)
+	get_tree().paused = true
+
 func _on_sphere_body_entered(body):
 	if body == boundary:
 		# YOU LOSE
-		var loosingScene = preload("res://scenes/main/loose.tscn").instantiate()
-		get_tree().root.add_child(loosingScene)
-		get_tree().paused = true
+		game_over()
 	
 	if body.is_in_group("collectibles"):
 		body.get_parent().remove_child(body)
@@ -100,3 +105,13 @@ func _on_sphere_body_entered(body):
 		
 		if body.name == "Goal":
 			next_level()
+		else:
+			laughometer.value += 5
+
+
+func _on_game_over_timer_timeout():
+	laughometer.value -= 1;
+	
+	if laughometer.value <= 0:
+		game_over()
+	

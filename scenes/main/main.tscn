@@ -33,4 +33,15 @@ shape = SubResource("WorldBoundaryShape3D_pxgny")
 stream = ExtResource("3_q08y7")
 autoplay = true
 
+[node name="Laughometer" type="ProgressBar" parent="."]
+offset_right = 171.0
+offset_bottom = 27.0
+max_value = 30.0
+allow_greater = true
+show_percentage = false
+
+[node name="GameOverTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="body_entered" from="Sphere" to="." method="_on_sphere_body_entered"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
