@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://bk76rd78vcc7j"]
 
-[ext_resource type="PackedScene" uid="uid://dexryaqplshdm" path="res://scenes/collectible/collectible.tscn" id="1_8f5be"]
-[ext_resource type="PackedScene" uid="uid://bts608o1wmhyg" path="res://scenes/collectible/goal.tscn" id="1_62mal"]
-[ext_resource type="PackedScene" uid="uid://b5m1dd140ubnm" path="res://scenes/collectible/avoidable.tscn" id="3_wnu47"]
+[ext_resource type="PackedScene" uid="uid://bts608o1wmhyg" path="res://scenes/collectible/goal/goal.tscn" id="1_21koi"]
+[ext_resource type="PackedScene" uid="uid://dexryaqplshdm" path="res://scenes/collectible/smile/collectible.tscn" id="2_ge5cp"]
+[ext_resource type="PackedScene" uid="uid://b5m1dd140ubnm" path="res://scenes/collectible/avoidable/avoidable.tscn" id="3_o5vsm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jixgh"]
 size = Vector3(6, 0.5, 12)
@@ -51,19 +51,19 @@ size = Vector3(3, 0.5, 12)
 
 [node name="Level" type="Node3D"]
 
-[node name="Goal" parent="." groups=["collectibles"] instance=ExtResource("1_62mal")]
+[node name="Goal" parent="." groups=["collectibles"] instance=ExtResource("1_21koi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0.5, -42)
 
-[node name="Collectible" parent="." groups=["collectibles"] instance=ExtResource("1_8f5be")]
+[node name="Collectible" parent="." groups=["collectibles"] instance=ExtResource("2_ge5cp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, -14)
 
-[node name="Collectible2" parent="." groups=["collectibles"] instance=ExtResource("1_8f5be")]
+[node name="Collectible2" parent="." groups=["collectibles"] instance=ExtResource("2_ge5cp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, -28)
 
-[node name="Avoidable" parent="." groups=["avoidables", "collectibles"] instance=ExtResource("3_wnu47")]
+[node name="Avoidable" parent="." groups=["avoidables", "collectibles"] instance=ExtResource("3_o5vsm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.5, -14)
 
-[node name="Avoidable2" parent="." groups=["avoidables", "collectibles"] instance=ExtResource("3_wnu47")]
+[node name="Avoidable2" parent="." groups=["avoidables", "collectibles"] instance=ExtResource("3_o5vsm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.5, -23)
 
 [node name="Section1" type="StaticBody3D" parent="."]

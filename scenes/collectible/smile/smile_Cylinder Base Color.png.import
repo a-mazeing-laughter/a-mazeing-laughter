@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0skj82oxydhr"
-path.s3tc="res://.godot/imported/angry_Cylinder Base Color.png-0b76bd941059cf7582e9b334b632fe7c.s3tc.ctex"
-path.etc2="res://.godot/imported/angry_Cylinder Base Color.png-0b76bd941059cf7582e9b334b632fe7c.etc2.ctex"
+uid="uid://ce3l18fqcdvot"
+path.s3tc="res://.godot/imported/smile_Cylinder Base Color.png-5cf3762faf38c3efd7c2679d71047ec7.s3tc.ctex"
+path.etc2="res://.godot/imported/smile_Cylinder Base Color.png-5cf3762faf38c3efd7c2679d71047ec7.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,8 +13,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://scenes/collectible/angry_Cylinder Base Color.png"
-dest_files=["res://.godot/imported/angry_Cylinder Base Color.png-0b76bd941059cf7582e9b334b632fe7c.s3tc.ctex", "res://.godot/imported/angry_Cylinder Base Color.png-0b76bd941059cf7582e9b334b632fe7c.etc2.ctex"]
+source_file="res://scenes/collectible/smile/smile_Cylinder Base Color.png"
+dest_files=["res://.godot/imported/smile_Cylinder Base Color.png-5cf3762faf38c3efd7c2679d71047ec7.s3tc.ctex", "res://.godot/imported/smile_Cylinder Base Color.png-5cf3762faf38c3efd7c2679d71047ec7.etc2.ctex"]
 
 [params]
 

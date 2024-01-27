@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce3l18fqcdvot"
-path.s3tc="res://.godot/imported/smile_Cylinder Base Color.png-b5307b8a1b8dfaca90f75d98ac809f9b.s3tc.ctex"
-path.etc2="res://.godot/imported/smile_Cylinder Base Color.png-b5307b8a1b8dfaca90f75d98ac809f9b.etc2.ctex"
+uid="uid://byew00h4aabau"
+path.s3tc="res://.godot/imported/balloons_Cone Base Color.png-2ac3fa024c1ce1e573cdbf724a31fbfc.s3tc.ctex"
+path.etc2="res://.godot/imported/balloons_Cone Base Color.png-2ac3fa024c1ce1e573cdbf724a31fbfc.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,8 +13,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://scenes/collectible/smile_Cylinder Base Color.png"
-dest_files=["res://.godot/imported/smile_Cylinder Base Color.png-b5307b8a1b8dfaca90f75d98ac809f9b.s3tc.ctex", "res://.godot/imported/smile_Cylinder Base Color.png-b5307b8a1b8dfaca90f75d98ac809f9b.etc2.ctex"]
+source_file="res://scenes/collectible/goal/balloons_Cone Base Color.png"
+dest_files=["res://.godot/imported/balloons_Cone Base Color.png-2ac3fa024c1ce1e573cdbf724a31fbfc.s3tc.ctex", "res://.godot/imported/balloons_Cone Base Color.png-2ac3fa024c1ce1e573cdbf724a31fbfc.etc2.ctex"]
 
 [params]
 

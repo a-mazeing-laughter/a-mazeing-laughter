@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxk0dtang4ldp"
-path.s3tc="res://.godot/imported/balloons_Sphere_4.png-ce22039346035e115db7f9f826a0513d.s3tc.ctex"
-path.etc2="res://.godot/imported/balloons_Sphere_4.png-ce22039346035e115db7f9f826a0513d.etc2.ctex"
+uid="uid://c074thrwhilgq"
+path.s3tc="res://.godot/imported/balloons_Cone.png-228bdd35d433359a5c52f8a152ab4c28.s3tc.ctex"
+path.etc2="res://.godot/imported/balloons_Cone.png-228bdd35d433359a5c52f8a152ab4c28.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,8 +13,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://scenes/collectible/balloons_Sphere_4.png"
-dest_files=["res://.godot/imported/balloons_Sphere_4.png-ce22039346035e115db7f9f826a0513d.s3tc.ctex", "res://.godot/imported/balloons_Sphere_4.png-ce22039346035e115db7f9f826a0513d.etc2.ctex"]
+source_file="res://scenes/collectible/goal/balloons_Cone.png"
+dest_files=["res://.godot/imported/balloons_Cone.png-228bdd35d433359a5c52f8a152ab4c28.s3tc.ctex", "res://.godot/imported/balloons_Cone.png-228bdd35d433359a5c52f8a152ab4c28.etc2.ctex"]
 
 [params]
 

@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byew00h4aabau"
-path.s3tc="res://.godot/imported/balloons_Cone Base Color.png-4c78775a0092d740288c0fbc4c0f74ef.s3tc.ctex"
-path.etc2="res://.godot/imported/balloons_Cone Base Color.png-4c78775a0092d740288c0fbc4c0f74ef.etc2.ctex"
+uid="uid://b6nxbslybtur6"
+path.s3tc="res://.godot/imported/balloons_Sphere Base Color.png-e384a9af1d4a3e4fe7247ff2390b897e.s3tc.ctex"
+path.etc2="res://.godot/imported/balloons_Sphere Base Color.png-e384a9af1d4a3e4fe7247ff2390b897e.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,8 +13,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://scenes/collectible/balloons_Cone Base Color.png"
-dest_files=["res://.godot/imported/balloons_Cone Base Color.png-4c78775a0092d740288c0fbc4c0f74ef.s3tc.ctex", "res://.godot/imported/balloons_Cone Base Color.png-4c78775a0092d740288c0fbc4c0f74ef.etc2.ctex"]
+source_file="res://scenes/collectible/goal/balloons_Sphere Base Color.png"
+dest_files=["res://.godot/imported/balloons_Sphere Base Color.png-e384a9af1d4a3e4fe7247ff2390b897e.s3tc.ctex", "res://.godot/imported/balloons_Sphere Base Color.png-e384a9af1d4a3e4fe7247ff2390b897e.etc2.ctex"]
 
 [params]
 

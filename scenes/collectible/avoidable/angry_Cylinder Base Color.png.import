@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu36tnxplwgmf"
-path.s3tc="res://.godot/imported/balloons_Cone_5.png-33a1e06c8f824576d0762b19dce992ff.s3tc.ctex"
-path.etc2="res://.godot/imported/balloons_Cone_5.png-33a1e06c8f824576d0762b19dce992ff.etc2.ctex"
+uid="uid://d0skj82oxydhr"
+path.s3tc="res://.godot/imported/angry_Cylinder Base Color.png-96be6e9b61030879b216f3f1b993bb85.s3tc.ctex"
+path.etc2="res://.godot/imported/angry_Cylinder Base Color.png-96be6e9b61030879b216f3f1b993bb85.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,8 +13,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://scenes/collectible/balloons_Cone_5.png"
-dest_files=["res://.godot/imported/balloons_Cone_5.png-33a1e06c8f824576d0762b19dce992ff.s3tc.ctex", "res://.godot/imported/balloons_Cone_5.png-33a1e06c8f824576d0762b19dce992ff.etc2.ctex"]
+source_file="res://scenes/collectible/avoidable/angry_Cylinder Base Color.png"
+dest_files=["res://.godot/imported/angry_Cylinder Base Color.png-96be6e9b61030879b216f3f1b993bb85.s3tc.ctex", "res://.godot/imported/angry_Cylinder Base Color.png-96be6e9b61030879b216f3f1b993bb85.etc2.ctex"]
 
 [params]
 
