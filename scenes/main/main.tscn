@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cowhv7yymyu56"]
+[gd_scene load_steps=9 format=3 uid="uid://cowhv7yymyu56"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_d6v31"]
 [ext_resource type="PackedScene" uid="uid://bsfbxbscpn5b4" path="res://scenes/player-sphere/player-sphere.tscn" id="2_alp3d"]
 [ext_resource type="AudioStream" uid="uid://dro7ngmtk6xgy" path="res://assets/Silly Fun.mp3" id="3_q08y7"]
+[ext_resource type="Texture2D" uid="uid://dpppnfb6y8b0m" path="res://assets/touchbuttons/buttonLeft.png" id="4_u7uri"]
+[ext_resource type="Texture2D" uid="uid://c0xky565a1tlb" path="res://assets/touchbuttons/buttonRight.png" id="5_sbt0e"]
+[ext_resource type="Texture2D" uid="uid://3xk460s18aix" path="res://assets/touchbuttons/buttonUp.png" id="6_eoxdh"]
+[ext_resource type="Texture2D" uid="uid://dvtioxouwpavs" path="res://assets/touchbuttons/buttonDown.png" id="7_31yxg"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_pxgny"]
 
@@ -51,6 +55,30 @@ text = "Laugh-O-Meter"
 
 [node name="GameOverTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="touchLeft" type="TouchScreenButton" parent="."]
+position = Vector2(40, 400)
+texture_normal = ExtResource("4_u7uri")
+action = "ui_left"
+visibility_mode = 1
+
+[node name="touchRight" type="TouchScreenButton" parent="."]
+position = Vector2(200, 400)
+texture_normal = ExtResource("5_sbt0e")
+action = "ui_right"
+visibility_mode = 1
+
+[node name="touchUp" type="TouchScreenButton" parent="."]
+position = Vector2(120, 320)
+texture_normal = ExtResource("6_eoxdh")
+action = "ui_up"
+visibility_mode = 1
+
+[node name="touchDown" type="TouchScreenButton" parent="."]
+position = Vector2(120, 480)
+texture_normal = ExtResource("7_31yxg")
+action = "ui_down"
+visibility_mode = 1
 
 [connection signal="body_entered" from="Sphere" to="." method="_on_sphere_body_entered"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
