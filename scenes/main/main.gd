@@ -8,6 +8,7 @@ var currentLevel = -1
 
 @onready var player = get_node("Sphere")
 @onready var camera : Camera3D = get_node("Camera3D")
+@onready var boundary = get_node("WorldBoundary")
 
 var maxRotation = 0.3
 var rotationSpeed = 0.75
@@ -27,7 +28,7 @@ func next_level():
 	add_child(levelNode)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	inputVector = getInputVector()
 
 func _physics_process(delta):
@@ -53,10 +54,6 @@ func getInputVector():
 	return vector
 
 func adjustRotation(delta):
-	if check_lose():
-		# YOU LOSE!
-		return
-
 	var diff = delta * rotationSpeed
 
 	if inputVector.x == 0:
@@ -69,6 +66,8 @@ func adjustRotation(delta):
 	else:
 		levelNode.rotation.z = clamp(levelNode.rotation.z + (diff * inputVector.z), -maxRotation, maxRotation)
 
-func check_lose():
-	var sphereY = player.position.y;
-	return sphereY <= -50
+
+func _on_sphere_body_entered(body):
+	if body == boundary:
+		# YOU LOSE
+		get_tree().paused = true
