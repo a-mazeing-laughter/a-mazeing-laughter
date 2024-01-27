@@ -4,7 +4,8 @@
 [ext_resource type="ArrayMesh" uid="uid://cxe1tn1m4jx7h" path="res://assets/models/block.obj" id="1_tv5g0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sh1h"]
-shading_mode = 0
+diffuse_mode = 1
+specular_mode = 1
 albedo_texture = ExtResource("1_altpj")
 uv1_triplanar = true
 uv1_triplanar_sharpness = 150.0

@@ -1,10 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://bdd7gm1op82iq"]
 
-[ext_resource type="Texture2D" uid="uid://dlcrnt7x4bt86" path="res://assets/ground.png" id="1_0whvk"]
+[ext_resource type="Texture2D" uid="uid://c01etwdfqhwwt" path="res://assets/ground.png" id="1_0whvk"]
 [ext_resource type="ArrayMesh" uid="uid://byrpnhljur1yv" path="res://assets/models/ramp_round.obj" id="1_460ul"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfu2q"]
-shading_mode = 0
+diffuse_mode = 1
+specular_mode = 1
 albedo_texture = ExtResource("1_0whvk")
 uv1_triplanar = true
 uv1_triplanar_sharpness = 150.0

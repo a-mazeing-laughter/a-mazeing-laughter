@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bqokm3o3cmbjp"]
 
 [ext_resource type="Script" path="res://scenes/main/credits.gd" id="1_eqxqg"]
-[ext_resource type="Texture2D" uid="uid://d1qcy1j1v3yos" path="res://assets/pink-button.png" id="2_0cqi1"]
-[ext_resource type="Texture2D" uid="uid://cutqwmd01ulbo" path="res://assets/credits.png" id="2_1ydb1"]
+[ext_resource type="Texture2D" uid="uid://c4fleule388ay" path="res://assets/pink-button.png" id="2_0cqi1"]
+[ext_resource type="Texture2D" uid="uid://b5bhqg44cdytb" path="res://assets/credits.png" id="2_1ydb1"]
 
 [sub_resource type="SystemFont" id="SystemFont_hupyo"]
 font_names = PackedStringArray("Sans-Serif")
