@@ -39,7 +39,7 @@ size = 20.0
 transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 6.33815e-06, -145)
 
 [node name="WorldBoundary" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldBoundary"]
 shape = SubResource("WorldBoundaryShape3D_pxgny")

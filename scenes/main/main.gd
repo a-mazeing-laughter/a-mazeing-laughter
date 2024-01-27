@@ -6,7 +6,8 @@ var currentLevel = -1
 	preload("res://scenes/levels/level-1.tscn"),
 	preload("res://scenes/levels/level-2.tscn"),
 	preload("res://scenes/levels/level-3.tscn"),
-	preload("res://scenes/levels/level-6.tscn")
+	preload("res://scenes/levels/level-5.tscn"),
+	preload("res://scenes/levels/level-6.tscn"),
 ]
 
 @onready var player = get_node("Sphere")
@@ -30,17 +31,17 @@ func next_level():
 	if levelNode:
 		remove_child(levelNode)
 		levelNode.queue_free()
-		
+
 		player.set_linear_velocity(Vector3(0,0,0))
 		player.position = initialPlayerPosition
-		
+
 	inputVector = Vector3()
 
 	currentLevel += 1
-	
+
 	if currentLevel >= levels.size():
 		currentLevel = 0
-	
+
 	levelNode = levels[currentLevel].instantiate()
 	add_child(levelNode)
 
@@ -56,7 +57,7 @@ func _physics_process(delta):
 
 func getInputVector():
 	var vector = Vector3()
-	
+
 	vector.x = Input.get_gyroscope().x
 	vector.z = Input.get_gyroscope().y
 
@@ -96,11 +97,11 @@ func _on_sphere_body_entered(body):
 	if body == boundary:
 		# YOU LOSE
 		game_over()
-	
+
 	if body.is_in_group("collectibles"):
 		body.get_parent().remove_child(body)
 		body.queue_free()
-		
+
 		if body.name == "Goal":
 			next_level()
 		elif body.is_in_group("booster"):
@@ -112,7 +113,7 @@ func _on_sphere_body_entered(body):
 
 func _on_game_over_timer_timeout():
 	laughometer.value -= 1;
-	
+
 	if laughometer.value <= 0:
 		game_over()
-	
+
