@@ -17,6 +17,7 @@ offset_bottom = 600.0
 text = "BACK"
 
 [node name="BackButton" type="Button" parent="BackText"]
+layout_mode = 0
 offset_right = 90.0
 offset_bottom = 50.0
 flat = true
