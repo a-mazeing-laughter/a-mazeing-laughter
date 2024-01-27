@@ -4,3 +4,21 @@
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_eqxqg")
+
+[node name="CreditsText" type="RichTextLabel" parent="."]
+offset_right = 1024.0
+offset_bottom = 600.0
+
+[node name="BackText" type="RichTextLabel" parent="."]
+offset_left = 935.0
+offset_top = 550.0
+offset_right = 1025.0
+offset_bottom = 600.0
+text = "BACK"
+
+[node name="BackButton" type="Button" parent="BackText"]
+offset_right = 90.0
+offset_bottom = 50.0
+flat = true
+
+[connection signal="pressed" from="BackText/BackButton" to="." method="_on_back_button_pressed"]

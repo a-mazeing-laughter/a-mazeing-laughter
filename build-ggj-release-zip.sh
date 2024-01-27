@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#./build.sh
+./build.sh
 
 rm -f a-mazeing-laughter-ggj2024.zip
 
