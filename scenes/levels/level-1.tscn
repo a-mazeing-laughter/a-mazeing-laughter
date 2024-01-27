@@ -1,50 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4cd4uvik15x1"]
+[gd_scene load_steps=5 format=3 uid="uid://b4cd4uvik15x1"]
 
 [ext_resource type="PackedScene" uid="uid://dexryaqplshdm" path="res://scenes/collectible/smile/collectible.tscn" id="1_iadx7"]
 [ext_resource type="PackedScene" uid="uid://bts608o1wmhyg" path="res://scenes/collectible/goal/goal.tscn" id="2_3dftw"]
 [ext_resource type="PackedScene" uid="uid://b5m1dd140ubnm" path="res://scenes/collectible/avoidable/avoidable.tscn" id="3_v62tr"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jixgh"]
-size = Vector3(6, 0.5, 40)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wq5r0"]
-albedo_color = Color(0.113725, 0.356863, 0.2, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ktgxr"]
-material = SubResource("StandardMaterial3D_wq5r0")
-size = Vector3(6, 0.5, 40)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5ce7b"]
-size = Vector3(16, 0.5, 6)
-
-[sub_resource type="BoxMesh" id="BoxMesh_j2l44"]
-material = SubResource("StandardMaterial3D_wq5r0")
-size = Vector3(16, 0.5, 6)
+[ext_resource type="PackedScene" uid="uid://qale2mubjisg" path="res://scenes/models/block.tscn" id="4_r12w8"]
 
 [node name="Level" type="Node3D"]
 
-[node name="Cross Long" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cross Long"]
-shape = SubResource("BoxShape3D_jixgh")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cross Long"]
-mesh = SubResource("BoxMesh_ktgxr")
-skeleton = NodePath("../..")
-
-[node name="Cross Long2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cross Long2"]
-shape = SubResource("BoxShape3D_5ce7b")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cross Long2"]
-mesh = SubResource("BoxMesh_j2l44")
-skeleton = NodePath("../..")
-
 [node name="Collectible" parent="." groups=["collectibles"] instance=ExtResource("1_iadx7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, -10.5)
 
 [node name="Goal" parent="." groups=["collectibles"] instance=ExtResource("2_3dftw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -35)
@@ -54,3 +18,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -15)
 
 [node name="Avoidable2" parent="." groups=["avoidables", "collectibles"] instance=ExtResource("3_v62tr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -25)
+
+[node name="Block" parent="." instance=ExtResource("4_r12w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -4.75, -3)
+
+[node name="Block2" parent="." instance=ExtResource("4_r12w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -4.75, -8)
+
+[node name="Block3" parent="." instance=ExtResource("4_r12w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -4.75, -13)
+
+[node name="Block9" parent="." instance=ExtResource("4_r12w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -4.75, -13)
+
+[node name="Block10" parent="." instance=ExtResource("4_r12w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -4.75, -13)
+
+[node name="Block4" parent="." instance=ExtResource("4_r12w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -4.75, -18)
+
+[node name="Block5" parent="." instance=ExtResource("4_r12w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -4.75, -23)
+
+[node name="Block6" parent="." instance=ExtResource("4_r12w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -4.75, -28)
+
+[node name="Block7" parent="." instance=ExtResource("4_r12w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -4.75, -33)
+
+[node name="Block8" parent="." instance=ExtResource("4_r12w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -4.75, -38)
