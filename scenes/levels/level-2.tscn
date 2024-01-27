@@ -42,16 +42,16 @@ material = SubResource("StandardMaterial3D_wq5r0")
 size = Vector3(20, 4, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dvay2"]
-size = Vector3(6, 0.5, 12)
+size = Vector3(3, 0.5, 12)
 
 [sub_resource type="BoxMesh" id="BoxMesh_p0782"]
 material = SubResource("StandardMaterial3D_wq5r0")
-size = Vector3(6, 0.5, 12)
+size = Vector3(3, 0.5, 12)
 
 [node name="Level" type="Node3D"]
 
 [node name="Goal" parent="." groups=["collectibles"] instance=ExtResource("1_62mal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.5, -42)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0.5, -42)
 
 [node name="Collectible" parent="." groups=["collectibles"] instance=ExtResource("1_8f5be")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, -14)
@@ -110,7 +110,7 @@ mesh = SubResource("BoxMesh_wnyvw")
 skeleton = NodePath("../..")
 
 [node name="Section5" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, -37)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Section5"]
 shape = SubResource("BoxShape3D_dvay2")
