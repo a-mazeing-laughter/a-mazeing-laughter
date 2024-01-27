@@ -75,14 +75,14 @@ func adjustRotation(delta):
 	var diff = delta * 0.7
 
 	if inputVector.x == 0:
-		levelNode.rotation.z = lerp(levelNode.rotation.z, 0.0, diff)
+		spatial.rotation.z = lerp(spatial.rotation.z, 0.0, diff)
 	else:
-		levelNode.rotation.z = clamp(levelNode.rotation.z + (diff * inputVector.x), -maxRotation, maxRotation)
+		spatial.rotation.z = clamp(spatial.rotation.z + (diff * inputVector.x), -maxRotation, maxRotation)
 
 	if inputVector.z == 0:
-		levelNode.rotation.x = lerp(levelNode.rotation.x, 0.0, diff)
+		spatial.rotation.x = lerp(spatial.rotation.x, 0.0, diff)
 	else:
-		levelNode.rotation.x = clamp(levelNode.rotation.x + (diff * inputVector.z), -maxRotation, maxRotation)
+		spatial.rotation.x = clamp(spatial.rotation.x + (diff * inputVector.z), -maxRotation, maxRotation)
 
 
 func game_over():
