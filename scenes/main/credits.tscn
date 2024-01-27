@@ -1,18 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqokm3o3cmbjp"]
+[gd_scene load_steps=5 format=3 uid="uid://bqokm3o3cmbjp"]
 
 [ext_resource type="Script" path="res://scenes/main/credits.gd" id="1_eqxqg"]
 [ext_resource type="Texture2D" uid="uid://c4fleule388ay" path="res://assets/pink-button.png" id="2_0cqi1"]
 
+[sub_resource type="SystemFont" id="SystemFont_hupyo"]
+font_names = PackedStringArray("Sans-Serif")
+
+[sub_resource type="Theme" id="Theme_pxxh7"]
+default_font = SubResource("SystemFont_hupyo")
+default_font_size = 18
+
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_eqxqg")
 
+[node name="headline" type="RichTextLabel" parent="."]
+offset_left = 50.0
+offset_top = 73.0
+offset_right = 850.0
+offset_bottom = 233.0
+theme = SubResource("Theme_pxxh7")
+theme_override_colors/default_color = Color(1, 0.835294, 0, 1)
+theme_override_font_sizes/normal_font_size = 55
+bbcode_enabled = true
+text = "Credits
+
+"
+
 [node name="CreditsText" type="RichTextLabel" parent="."]
 offset_left = 50.0
-offset_top = 50.0
+offset_top = 165.0
 offset_right = 850.0
-offset_bottom = 450.0
+offset_bottom = 466.0
+theme = SubResource("Theme_pxxh7")
 bbcode_enabled = true
-text = "[b]CREDITS[/b]
+text = "
 
 "
 
