@@ -8,6 +8,11 @@
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_d6v31")
 
+[node name="Sphere" parent="." instance=ExtResource("2_alp3d")]
+mass = 1.0
+max_contacts_reported = 100
+contact_monitor = true
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.34202, 0.939693, 0, -0.939693, 0.34202, 0, 30, 10)
 top_level = true
@@ -16,11 +21,6 @@ size = 20.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 6.33815e-06, -145)
-
-[node name="Sphere" parent="." instance=ExtResource("2_alp3d")]
-mass = 1.0
-max_contacts_reported = 100
-contact_monitor = true
 
 [node name="WorldBoundary" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)

@@ -12,6 +12,7 @@ var currentLevel = -1
 
 var loosingScene = preload("res://scenes/main/loose.tscn").instantiate()
 
+var initialCameraRotation = deg_to_rad(-70.0)
 var maxRotation = 0.3
 var inputVector = Vector3()
 
@@ -57,9 +58,19 @@ func getInputVector():
 
 func adjustRotation(delta):
 	var acceleration = delta * 1000
-	var camRotation = delta * 0.75
-
 	player.apply_force(inputVector * acceleration)
+
+	var diff = delta * 0.1
+
+	if inputVector.x == 0:
+		camera.rotation.y = lerp(camera.rotation.y, 0.0, diff)
+	else:
+		camera.rotation.y = clamp(camera.rotation.y + (diff * -1 * inputVector.x), -maxRotation, maxRotation)
+
+	if inputVector.z == 0:
+		camera.rotation.x = lerp(camera.rotation.x, initialCameraRotation, diff)
+	else:
+		camera.rotation.x = clamp(camera.rotation.x + (diff * -1 * inputVector.z), initialCameraRotation - maxRotation, initialCameraRotation + maxRotation)
 
 func _on_sphere_body_entered(body):
 	if body == boundary:
