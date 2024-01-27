@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4cd4uvik15x1"]
+[gd_scene load_steps=9 format=3 uid="uid://b4cd4uvik15x1"]
 
 [ext_resource type="PackedScene" uid="uid://dexryaqplshdm" path="res://scenes/collectible/collectible.tscn" id="1_73k8y"]
 [ext_resource type="PackedScene" uid="uid://bts608o1wmhyg" path="res://scenes/collectible/goal.tscn" id="2_wgtle"]
+[ext_resource type="PackedScene" uid="uid://b5m1dd140ubnm" path="res://scenes/collectible/avoidable.tscn" id="3_0u0n3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jixgh"]
 size = Vector3(6, 0.5, 40)
@@ -47,3 +48,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, -8)
 
 [node name="Goal" parent="." groups=["collectibles"] instance=ExtResource("2_wgtle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -35)
+
+[node name="Avoidable" parent="." groups=["avoidables", "collectibles"] instance=ExtResource("3_0u0n3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -15)
+
+[node name="Avoidable2" parent="." groups=["avoidables", "collectibles"] instance=ExtResource("3_0u0n3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -25)

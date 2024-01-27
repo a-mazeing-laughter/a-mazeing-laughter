@@ -106,7 +106,8 @@ func _on_sphere_body_entered(body):
 		if body.name == "Goal":
 			next_level()
 		else:
-			laughometer.value += 5
+			var points = -5 if body.is_in_group("avoidables") else 5
+			laughometer.value += points
 
 
 func _on_game_over_timer_timeout():
