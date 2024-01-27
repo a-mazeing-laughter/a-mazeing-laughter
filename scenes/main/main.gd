@@ -101,6 +101,8 @@ func _on_sphere_body_entered(body):
 		
 		if body.name == "Goal":
 			next_level()
+		elif body.is_in_group("booster"):
+			player.apply_impulse(Vector3.FORWARD * 30)
 		else:
 			var points = -5 if body.is_in_group("avoidables") else 5
 			laughometer.value += points
