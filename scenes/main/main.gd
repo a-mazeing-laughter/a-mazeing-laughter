@@ -63,9 +63,11 @@ func adjustRotation(delta):
 	var diff = delta * 0.1
 
 	if inputVector.x == 0:
-		camera.rotation.y = lerp(camera.rotation.y, 0.0, diff)
+		camera.rotation.y = lerp(camera.rotation.y, 0.0, diff * 6)
+		camera.rotation.z = camera.rotation.y * -1
 	else:
-		camera.rotation.y = clamp(camera.rotation.y + (diff * -1 * inputVector.x), -maxRotation, maxRotation)
+		camera.rotation.y = clamp(camera.rotation.y + (diff * -6 * inputVector.x), -maxRotation, maxRotation)
+		camera.rotation.z = camera.rotation.y * -1
 
 	if inputVector.z == 0:
 		camera.rotation.x = lerp(camera.rotation.x, initialCameraRotation, diff)
