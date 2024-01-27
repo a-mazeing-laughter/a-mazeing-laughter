@@ -27,7 +27,7 @@ func next_level():
 	add_child(levelNode)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	inputVector = getInputVector()
 
 func _physics_process(delta):
