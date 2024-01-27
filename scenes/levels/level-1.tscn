@@ -45,5 +45,5 @@ skeleton = NodePath("../..")
 [node name="Collectible" parent="." groups=["collectibles"] instance=ExtResource("1_73k8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, -8)
 
-[node name="Collectible2" parent="." instance=ExtResource("2_j7epg")]
+[node name="Avoidable" parent="." groups=["collectibles"] instance=ExtResource("2_j7epg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -21)
