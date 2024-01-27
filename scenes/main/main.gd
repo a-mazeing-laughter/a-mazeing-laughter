@@ -76,3 +76,7 @@ func _on_sphere_body_entered(body):
 		# YOU LOSE
 		get_tree().root.add_child(loosingScene)
 		get_tree().paused = true
+	
+	if body.is_in_group("collectibles"):
+		body.get_parent().remove_child(levelNode)
+		body.queue_free()
