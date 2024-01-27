@@ -5,7 +5,8 @@ var currentLevel = -1
 @onready var levels = [
 	preload("res://scenes/levels/level-1.tscn"),
 	preload("res://scenes/levels/level-2.tscn"),
-	preload("res://scenes/levels/level-3.tscn")
+	preload("res://scenes/levels/level-3.tscn"),
+	preload("res://scenes/levels/level-6.tscn")
 ]
 
 @onready var player = get_node("Sphere")
@@ -50,7 +51,7 @@ func _process(_delta):
 func _physics_process(delta):
 	var acceleration = delta * 1000
 	player.apply_force(inputVector * acceleration)
-	
+
 	adjustRotation(delta)
 
 func getInputVector():
