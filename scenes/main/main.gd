@@ -8,7 +8,8 @@ var currentLevel = -1
 ]
 
 @onready var player = get_node("Sphere")
-@onready var camera : Camera3D = get_node("Camera3D")
+@onready var spatial : Node3D = get_node("Sphere/Spatial")
+@onready var camera : Camera3D = get_node("Sphere/Spatial/Camera3D")
 @onready var boundary = get_node("WorldBoundary")
 @onready var laughometer = get_node("Laughometer")
 
@@ -46,12 +47,10 @@ func _process(_delta):
 	inputVector = getInputVector()
 
 func _physics_process(delta):
+	var acceleration = delta * 1000
+	player.apply_force(inputVector * acceleration)
+	
 	adjustRotation(delta)
-	follow_camera()
-
-func follow_camera():
-	camera.position.x = player.position.x
-	camera.position.z = player.position.z + 10
 
 func getInputVector():
 	var vector = Vector3()
@@ -72,22 +71,19 @@ func getInputVector():
 	return vector
 
 func adjustRotation(delta):
-	var acceleration = delta * 1000
-	player.apply_force(inputVector * acceleration)
-
-	var diff = delta * 0.1
+	spatial.position = player.position
+	var diff = delta * 0.7
 
 	if inputVector.x == 0:
-		camera.rotation.y = lerp(camera.rotation.y, 0.0, diff * 6)
-		camera.rotation.z = camera.rotation.y * -1
+		levelNode.rotation.z = lerp(levelNode.rotation.z, 0.0, diff)
 	else:
-		camera.rotation.y = clamp(camera.rotation.y + (diff * -6 * inputVector.x), -maxRotation, maxRotation)
-		camera.rotation.z = camera.rotation.y * -1
+		levelNode.rotation.z = clamp(levelNode.rotation.z + (diff * inputVector.x), -maxRotation, maxRotation)
 
 	if inputVector.z == 0:
-		camera.rotation.x = lerp(camera.rotation.x, initialCameraRotation, diff)
+		levelNode.rotation.x = lerp(levelNode.rotation.x, 0.0, diff)
 	else:
-		camera.rotation.x = clamp(camera.rotation.x + (diff * -1 * inputVector.z), initialCameraRotation - maxRotation, initialCameraRotation + maxRotation)
+		levelNode.rotation.x = clamp(levelNode.rotation.x + (diff * inputVector.z), -maxRotation, maxRotation)
+
 
 func game_over():
 	var loosingScene = preload("res://scenes/main/loose.tscn").instantiate()
