@@ -11,8 +11,6 @@ var currentLevel = -1
 @onready var camera : Camera3D = get_node("Camera3D")
 @onready var boundary = get_node("WorldBoundary")
 
-var loosingScene = preload("res://scenes/main/loose.tscn").instantiate()
-
 var initialCameraRotation = deg_to_rad(-70.0)
 var maxRotation = 0.3
 var inputVector = Vector3()
@@ -79,6 +77,7 @@ func adjustRotation(delta):
 func _on_sphere_body_entered(body):
 	if body == boundary:
 		# YOU LOSE
+		var loosingScene = preload("res://scenes/main/loose.tscn").instantiate()
 		get_tree().root.add_child(loosingScene)
 		get_tree().paused = true
 	

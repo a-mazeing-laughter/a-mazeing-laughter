@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://djgvy4ixfhwi2"]
+
+[ext_resource type="Script" path="res://scenes/main/start.gd" id="1_lyqnp"]
+[ext_resource type="Texture2D" uid="uid://c5336ag8xo2uy" path="res://assets/startpage.png" id="2_6867e"]
+
+[node name="Start" type="Node2D"]
+script = ExtResource("1_lyqnp")
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_6867e")
+
+[node name="StartButton" type="Button" parent="BackgroundImage"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 455.0
+offset_right = 95.0
+offset_bottom = 495.0
+flat = true
+
+[node name="CreditsButton" type="Button" parent="BackgroundImage"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 501.0
+offset_right = 94.0
+offset_bottom = 541.0
+flat = true
+
+[connection signal="pressed" from="BackgroundImage/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="BackgroundImage/CreditsButton" to="." method="_on_credits_button_pressed"]
