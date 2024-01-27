@@ -7,6 +7,7 @@ var currentLevel = -1
 ]
 
 @onready var player = get_node("Sphere")
+@onready var camera : Camera3D = get_node("Camera3D")
 
 var maxRotation = 0.3
 var rotationSpeed = 0.75
@@ -31,6 +32,10 @@ func _process(delta):
 
 func _physics_process(delta):
 	adjustRotation(delta)
+	follow_camera()
+
+func follow_camera():
+	camera.position = player.position + Vector3(0, 30, 0)
 
 func getInputVector():
 	var vector = Vector3()

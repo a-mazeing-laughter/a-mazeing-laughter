@@ -6,10 +6,13 @@
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_d6v31")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 15, 0)
-
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 15, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 160, 0)
+top_level = true
+projection = 1
+size = 30.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 6.33815e-06, -145)
 
 [node name="Sphere" parent="." instance=ExtResource("2_alp3d")]
