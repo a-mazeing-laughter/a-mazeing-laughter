@@ -2,18 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://11l3nbdeva57"
-path.s3tc="res://.godot/imported/Sphere.005 Base Color.png-37b2d3e862926f1d4f60c9d69d0ad2bf.s3tc.ctex"
-path.etc2="res://.godot/imported/Sphere.005 Base Color.png-37b2d3e862926f1d4f60c9d69d0ad2bf.etc2.ctex"
+uid="uid://c074thrwhilgq"
+path.s3tc="res://.godot/imported/balloons_Cone.png-f34b7c99727ae2069b35a457ad351874.s3tc.ctex"
+path.etc2="res://.godot/imported/balloons_Cone.png-f34b7c99727ae2069b35a457ad351874.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://scenes/collectible/Sphere.005 Base Color.png"
-dest_files=["res://.godot/imported/Sphere.005 Base Color.png-37b2d3e862926f1d4f60c9d69d0ad2bf.s3tc.ctex", "res://.godot/imported/Sphere.005 Base Color.png-37b2d3e862926f1d4f60c9d69d0ad2bf.etc2.ctex"]
+source_file="res://scenes/collectible/balloons_Cone.png"
+dest_files=["res://.godot/imported/balloons_Cone.png-f34b7c99727ae2069b35a457ad351874.s3tc.ctex", "res://.godot/imported/balloons_Cone.png-f34b7c99727ae2069b35a457ad351874.etc2.ctex"]
 
 [params]
 
