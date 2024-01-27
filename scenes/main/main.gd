@@ -13,8 +13,6 @@ var currentLevel = -1
 
 @onready var initialPlayerPosition = player.position
 
-var loosingScene = preload("res://scenes/main/loose.tscn").instantiate()
-
 var initialCameraRotation = deg_to_rad(-70.0)
 var maxRotation = 0.3
 var inputVector
