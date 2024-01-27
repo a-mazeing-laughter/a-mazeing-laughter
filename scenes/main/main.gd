@@ -10,6 +10,8 @@ var currentLevel = -1
 @onready var camera : Camera3D = get_node("Camera3D")
 @onready var boundary = get_node("WorldBoundary")
 
+var loosingScene = preload("res://scenes/main/loose.tscn").instantiate()
+
 var maxRotation = 0.3
 var rotationSpeed = 0.75
 var inputVector = Vector3()
@@ -36,7 +38,7 @@ func _physics_process(delta):
 	follow_camera()
 
 func follow_camera():
-	camera.position = player.position + Vector3(0, 30, 0)
+	camera.position = player.position + Vector3(0, 30, 10)
 
 func getInputVector():
 	var vector = Vector3()
@@ -65,9 +67,12 @@ func adjustRotation(delta):
 		levelNode.rotation.z = lerp(levelNode.rotation.z, 0.0, diff)
 	else:
 		levelNode.rotation.z = clamp(levelNode.rotation.z + (diff * inputVector.z), -maxRotation, maxRotation)
+		
+	boundary.rotation = levelNode.rotation
 
 
 func _on_sphere_body_entered(body):
 	if body == boundary:
 		# YOU LOSE
+		get_tree().root.add_child(loosingScene)
 		get_tree().paused = true
