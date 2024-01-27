@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cowhv7yymyu56"]
+[gd_scene load_steps=4 format=3 uid="uid://cowhv7yymyu56"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_d6v31"]
 [ext_resource type="PackedScene" uid="uid://bsfbxbscpn5b4" path="res://scenes/player-sphere/player-sphere.tscn" id="2_alp3d"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_pxgny"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_d6v31")
@@ -16,3 +18,13 @@ size = 30.0
 transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 6.33815e-06, -145)
 
 [node name="Sphere" parent="." instance=ExtResource("2_alp3d")]
+max_contacts_reported = 100
+contact_monitor = true
+
+[node name="WorldBoundary" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldBoundary"]
+shape = SubResource("WorldBoundaryShape3D_pxgny")
+
+[connection signal="body_entered" from="Sphere" to="." method="_on_sphere_body_entered"]
