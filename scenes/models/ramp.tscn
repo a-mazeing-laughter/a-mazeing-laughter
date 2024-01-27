@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1hesipg1fccy"]
 
 [ext_resource type="ArrayMesh" uid="uid://wbda52s3felq" path="res://assets/models/ramp.obj" id="1_03xni"]
-[ext_resource type="Texture2D" uid="uid://dlcrnt7x4bt86" path="res://assets/ground.png" id="1_4imos"]
+[ext_resource type="Texture2D" uid="uid://c01etwdfqhwwt" path="res://assets/ground.png" id="1_4imos"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p6ub1"]
 shading_mode = 0
