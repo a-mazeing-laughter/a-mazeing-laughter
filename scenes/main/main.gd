@@ -33,6 +33,7 @@ func next_level():
 func _process(_delta):
 	inputVector = getInputVector()
 
+
 func _physics_process(delta):
 	adjustRotation(delta)
 	follow_camera()

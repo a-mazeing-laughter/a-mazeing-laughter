@@ -10,4 +10,5 @@ offset_left = 317.0
 offset_top = 275.0
 offset_right = 481.0
 offset_bottom = 336.0
-text = "YOU LOOSE!"
+text = "     YOU LOOSE!
+Press R to restart"
