@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://bk76rd78vcc7j"]
+[gd_scene load_steps=16 format=3 uid="uid://bk76rd78vcc7j"]
 
 [ext_resource type="PackedScene" uid="uid://dexryaqplshdm" path="res://scenes/collectible/collectible.tscn" id="1_8f5be"]
+[ext_resource type="PackedScene" uid="uid://bts608o1wmhyg" path="res://scenes/collectible/goal.tscn" id="1_62mal"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jixgh"]
 size = Vector3(6, 0.5, 12)
@@ -48,6 +49,9 @@ material = SubResource("StandardMaterial3D_wq5r0")
 size = Vector3(6, 0.5, 12)
 
 [node name="Level" type="Node3D"]
+
+[node name="Goal" parent="." groups=["collectibles"] instance=ExtResource("1_62mal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.5, -42)
 
 [node name="Collectible" parent="." groups=["collectibles"] instance=ExtResource("1_8f5be")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, -14)

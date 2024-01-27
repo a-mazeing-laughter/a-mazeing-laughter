@@ -32,6 +32,10 @@ func next_level():
 	inputVector = Vector3()
 
 	currentLevel += 1
+	
+	if currentLevel >= levels.size():
+		currentLevel = 0
+	
 	levelNode = levels[currentLevel].instantiate()
 	add_child(levelNode)
 
