@@ -53,6 +53,9 @@ func follow_camera():
 
 func getInputVector():
 	var vector = Vector3()
+	
+	vector.x = Input.get_gyroscope().x
+	vector.z = Input.get_gyroscope().y
 
 	if Input.is_action_pressed("ui_left"):
 		vector.x = -1
