@@ -17,6 +17,8 @@ func _process(_delta):
 func centerText():
 	var loosingText = get_node("LoosingText")
 	loosingText.position = get_viewport_rect().size/2
+	loosingText.position.x = loosingText.position.x - loosingText.get_content_width()/2
+	loosingText.position.y = loosingText.position.y - loosingText.get_content_height()/2
 
 
 func screenSizeChanged():
