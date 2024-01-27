@@ -33,10 +33,6 @@ func _physics_process(delta):
 	adjustRotation(delta)
 
 func getInputVector():
-	if check_lose():
-		# YOU LOSE!
-		return
-
 	var vector = Vector3()
 
 	if Input.is_action_pressed("ui_left"):
@@ -52,6 +48,10 @@ func getInputVector():
 	return vector
 
 func adjustRotation(delta):
+	if check_lose():
+		# YOU LOSE!
+		return
+
 	var diff = delta * rotationSpeed
 
 	if inputVector.x == 0:
