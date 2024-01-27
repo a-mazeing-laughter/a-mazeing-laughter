@@ -36,7 +36,7 @@ func _physics_process(delta):
 	follow_camera()
 
 func follow_camera():
-	camera.position = player.position + Vector3(0, 30, 0)
+	camera.position = player.position + Vector3(0, 30, 10)
 
 func getInputVector():
 	var vector = Vector3()
