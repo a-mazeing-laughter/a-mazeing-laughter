@@ -11,6 +11,15 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, -55.8288)
 
 [node name="Collectible" parent="." groups=["collectibles"] instance=ExtResource("2_68gnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5403, 0.5, -11.358)
+
+[node name="Collectible3" parent="." groups=["collectibles"] instance=ExtResource("2_68gnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2055, 0.5, -26.5994)
+
+[node name="Collectible4" parent="." groups=["collectibles"] instance=ExtResource("2_68gnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3445, 0.5, -43.8916)
+
+[node name="Collectible2" parent="." groups=["collectibles"] instance=ExtResource("2_68gnt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0527, 0.5, -11.358)
 
 [node name="Avoidable" parent="." groups=["avoidables", "collectibles"] instance=ExtResource("3_xp01j")]
