@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4cd4uvik15x1"]
+[gd_scene load_steps=8 format=3 uid="uid://b4cd4uvik15x1"]
 
 [ext_resource type="PackedScene" uid="uid://dexryaqplshdm" path="res://scenes/collectible/collectible.tscn" id="1_73k8y"]
+[ext_resource type="PackedScene" uid="uid://bts608o1wmhyg" path="res://scenes/collectible/goal.tscn" id="2_wgtle"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jixgh"]
 size = Vector3(6, 0.5, 40)
@@ -43,3 +44,6 @@ skeleton = NodePath("../..")
 
 [node name="Collectible" parent="." groups=["collectibles"] instance=ExtResource("1_73k8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, -8)
+
+[node name="Goal" parent="." groups=["collectibles"] instance=ExtResource("2_wgtle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -35)

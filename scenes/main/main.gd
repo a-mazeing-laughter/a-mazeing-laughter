@@ -3,18 +3,19 @@ extends Node3D
 var levelNode;
 var currentLevel = -1
 @onready var levels = [
-	preload("res://scenes/levels/level-1.tscn")
+	preload("res://scenes/levels/level-1.tscn"),
+	preload("res://scenes/levels/level-2.tscn")
 ]
 
 @onready var player = get_node("Sphere")
 @onready var camera : Camera3D = get_node("Camera3D")
 @onready var boundary = get_node("WorldBoundary")
 
-var loosingScene = preload("res://scenes/main/loose.tscn").instantiate()
+@onready var initialPlayerPosition = player.position
 
 var initialCameraRotation = deg_to_rad(-70.0)
 var maxRotation = 0.3
-var inputVector = Vector3()
+var inputVector
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,15 +25,23 @@ func next_level():
 	if levelNode:
 		remove_child(levelNode)
 		levelNode.queue_free()
+		
+		player.set_linear_velocity(Vector3(0,0,0))
+		player.position = initialPlayerPosition
+		
+	inputVector = Vector3()
 
 	currentLevel += 1
+	
+	if currentLevel >= levels.size():
+		currentLevel = 0
+	
 	levelNode = levels[currentLevel].instantiate()
 	add_child(levelNode)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	inputVector = getInputVector()
-
 
 func _physics_process(delta):
 	adjustRotation(delta)
@@ -78,9 +87,13 @@ func adjustRotation(delta):
 func _on_sphere_body_entered(body):
 	if body == boundary:
 		# YOU LOSE
+		var loosingScene = preload("res://scenes/main/loose.tscn").instantiate()
 		get_tree().root.add_child(loosingScene)
 		get_tree().paused = true
 	
 	if body.is_in_group("collectibles"):
 		body.get_parent().remove_child(body)
 		body.queue_free()
+		
+		if body.name == "Goal":
+			next_level()
