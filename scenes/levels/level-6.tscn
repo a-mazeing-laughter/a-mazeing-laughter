@@ -1,38 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwt6kxlwx37yl"]
+[gd_scene load_steps=5 format=3 uid="uid://dwt6kxlwx37yl"]
 
 [ext_resource type="PackedScene" uid="uid://bts608o1wmhyg" path="res://scenes/collectible/goal/goal.tscn" id="1_lwrg8"]
 [ext_resource type="PackedScene" uid="uid://b1hesipg1fccy" path="res://scenes/models/ramp.tscn" id="2_jim0a"]
 [ext_resource type="PackedScene" uid="uid://b2eb7qnm66d8v" path="res://scenes/collectible/booschter/booschter.tscn" id="3_fsiyn"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jixgh"]
-size = Vector3(5, 0.5, 14)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wq5r0"]
-albedo_color = Color(0.113725, 0.356863, 0.2, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ktgxr"]
-material = SubResource("StandardMaterial3D_wq5r0")
-size = Vector3(5, 0.5, 14)
+[ext_resource type="PackedScene" uid="uid://qale2mubjisg" path="res://scenes/models/block.tscn" id="4_o27b1"]
 
 [node name="Level" type="Node3D"]
 
-[node name="Cross Long" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cross Long"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
-shape = SubResource("BoxShape3D_jixgh")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cross Long"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
-mesh = SubResource("BoxMesh_ktgxr")
-skeleton = NodePath("../..")
-
 [node name="Goal" parent="." groups=["collectibles"] instance=ExtResource("1_lwrg8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26, -100)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23, -100)
 
 [node name="Ramp" parent="." instance=ExtResource("2_jim0a")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.5, 0, -15)
 
 [node name="Booster" parent="." groups=["booster", "collectibles"] instance=ExtResource("3_fsiyn")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.5, -8)
+
+[node name="Block2" parent="." instance=ExtResource("4_o27b1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -5, -1)
+
+[node name="Block3" parent="." instance=ExtResource("4_o27b1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -5, -6)
+
+[node name="Block4" parent="." instance=ExtResource("4_o27b1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -5, -10)
+
+[node name="Block5" parent="." instance=ExtResource("4_o27b1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -5, -15)
