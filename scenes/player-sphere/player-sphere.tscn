@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bsfbxbscpn5b4"]
 
-[ext_resource type="Texture2D" uid="uid://cyr4jyqo8esc1" path="res://scenes/player-sphere/clown_Sphere Base Color.png" id="1_gnmhh"]
+[ext_resource type="Texture2D" uid="uid://dxdqi30nrk552" path="res://assets/clown_Sphere Base Color.png" id="1_pi8us"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpmge"]
-albedo_texture = ExtResource("1_gnmhh")
+albedo_texture = ExtResource("1_pi8us")
 
 [sub_resource type="SphereMesh" id="SphereMesh_31tb5"]
 material = SubResource("StandardMaterial3D_qpmge")
