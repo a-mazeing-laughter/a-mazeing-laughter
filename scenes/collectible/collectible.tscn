@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://dexryaqplshdm"]
 
-[ext_resource type="Texture2D" uid="uid://dmpfvv4t3mgas" path="res://scenes/collectible/smile_Cylinder Base Color.png" id="1_3oobl"]
+[ext_resource type="Texture2D" uid="uid://ce3l18fqcdvot" path="res://scenes/collectible/smile_Cylinder Base Color.png" id="1_3jshn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6tpq3"]
 albedo_color = Color(1, 1, 0, 1)
-albedo_texture = ExtResource("1_3oobl")
+albedo_texture = ExtResource("1_3jshn")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_bcg6l"]
 material = SubResource("StandardMaterial3D_6tpq3")
