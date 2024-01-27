@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://beriw36xa7apu"]
+
+[ext_resource type="Script" path="res://scenes/main/loose.gd" id="1_d5llr"]
+
+[node name="Loose" type="Node2D"]
+script = ExtResource("1_d5llr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 317.0
+offset_top = 275.0
+offset_right = 481.0
+offset_bottom = 336.0
+text = "YOU LOOSE!"
