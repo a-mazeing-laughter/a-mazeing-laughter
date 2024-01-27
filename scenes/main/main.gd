@@ -79,5 +79,5 @@ func _on_sphere_body_entered(body):
 		get_tree().paused = true
 	
 	if body.is_in_group("collectibles"):
-		body.get_parent().remove_child(levelNode)
+		body.get_parent().remove_child(body)
 		body.queue_free()
