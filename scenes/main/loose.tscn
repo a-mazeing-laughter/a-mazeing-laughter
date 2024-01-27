@@ -5,7 +5,7 @@
 [node name="Loose" type="Node2D"]
 script = ExtResource("1_d5llr")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="LoosingText" type="RichTextLabel" parent="."]
 offset_left = 317.0
 offset_top = 275.0
 offset_right = 481.0
