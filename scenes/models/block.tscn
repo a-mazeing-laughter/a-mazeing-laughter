@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://qale2mubjisg"]
+
+[ext_resource type="ArrayMesh" uid="uid://cxe1tn1m4jx7h" path="res://assets/models/block.obj" id="1_tv5g0"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oectu"]
+points = PackedVector3Array(5, 4.99944, 4.99944, 5, 4.99944, 0, 0, 4.99944, 4.99944, 5, 0, 4.99944, 5, 0, 0, 0, 4.99944, 0, 0, 0, 4.99944, 0, 0, 0)
+
+[node name="Block" type="StaticBody3D"]
+
+[node name="Block" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_tv5g0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62299, 1.19209e-07, -0.904145)
+shape = SubResource("ConvexPolygonShape3D_oectu")

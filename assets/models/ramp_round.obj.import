@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://byrpnhljur1yv"
+path="res://.godot/imported/ramp_round.obj-b68342834ce9bb4aa1b5d193445168cb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ramp_round.obj-b68342834ce9bb4aa1b5d193445168cb.mesh"]
+
+source_file="res://assets/models/ramp_round.obj"
+dest_files=["res://.godot/imported/ramp_round.obj-b68342834ce9bb4aa1b5d193445168cb.mesh", "res://.godot/imported/ramp_round.obj-b68342834ce9bb4aa1b5d193445168cb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
