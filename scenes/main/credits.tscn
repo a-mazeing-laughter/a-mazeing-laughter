@@ -1,24 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqokm3o3cmbjp"]
+[gd_scene load_steps=3 format=3 uid="uid://bqokm3o3cmbjp"]
 
 [ext_resource type="Script" path="res://scenes/main/credits.gd" id="1_eqxqg"]
+[ext_resource type="Texture2D" uid="uid://c4fleule388ay" path="res://assets/pink-button.png" id="2_0cqi1"]
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_eqxqg")
 
 [node name="CreditsText" type="RichTextLabel" parent="."]
-offset_right = 1024.0
-offset_bottom = 600.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 850.0
+offset_bottom = 450.0
+bbcode_enabled = true
+text = "[b]CREDITS[/b]
 
-[node name="BackText" type="RichTextLabel" parent="."]
-offset_left = 935.0
-offset_top = 550.0
-offset_right = 1025.0
-offset_bottom = 600.0
-text = "BACK"
+"
 
-[node name="BackButton" type="Button" parent="BackText"]
-offset_right = 90.0
-offset_bottom = 50.0
-flat = true
+[node name="BackButton" type="Button" parent="."]
+offset_left = 830.0
+offset_top = 515.0
+offset_right = 980.0
+offset_bottom = 565.0
+text = "back"
+icon = ExtResource("2_0cqi1")
 
-[connection signal="pressed" from="BackText/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

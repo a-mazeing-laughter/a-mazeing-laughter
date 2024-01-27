@@ -3,7 +3,7 @@ extends Node2D
 
 func _ready():
 	var creditsText = load_file("res://CREDITS.md")
-	get_node("CreditsText").text = creditsText
+	get_node("CreditsText").text += creditsText
 
 
 func _process(_delta):
