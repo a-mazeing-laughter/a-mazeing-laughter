@@ -1,51 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cowhv7yymyu56"]
+[gd_scene load_steps=5 format=3 uid="uid://cowhv7yymyu56"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_d6v31"]
 [ext_resource type="PackedScene" uid="uid://bsfbxbscpn5b4" path="res://scenes/player-sphere/player-sphere.tscn" id="2_alp3d"]
 [ext_resource type="AudioStream" uid="uid://dro7ngmtk6xgy" path="res://assets/Silly Fun.mp3" id="3_q08y7"]
-[ext_resource type="Shader" path="res://assets/sky.gdshader" id="4_l76rs"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_pxgny"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hhmbg"]
-shader = ExtResource("4_l76rs")
-shader_parameter/day_top_color = Color(0.1, 0.6, 1, 1)
-shader_parameter/day_bottom_color = Color(0.4, 0.8, 1, 1)
-shader_parameter/sunset_top_color = Color(0.7, 0.75, 1, 1)
-shader_parameter/sunset_bottom_color = Color(1, 0.5, 0.7, 1)
-shader_parameter/night_top_color = Color(0.02, 0, 0.04, 1)
-shader_parameter/night_bottom_color = Color(0.1, 0, 0.2, 1)
-shader_parameter/horizon_color = Color(0, 0.7, 0.8, 1)
-shader_parameter/horizon_blur = 0.05
-shader_parameter/sun_color = Color(10, 8, 1, 1)
-shader_parameter/sun_sunset_color = Color(10, 0, 0, 1)
-shader_parameter/sun_size = 0.2
-shader_parameter/sun_blur = 10.0
-shader_parameter/moon_color = Color(1, 0.95, 0.7, 1)
-shader_parameter/moon_size = 0.06
-shader_parameter/moon_blur = 0.1
-shader_parameter/clouds_edge_color = Color(0.8, 0.8, 0.98, 1)
-shader_parameter/clouds_top_color = Color(1, 1, 1, 1)
-shader_parameter/clouds_middle_color = Color(0.92, 0.92, 0.98, 1)
-shader_parameter/clouds_bottom_color = Color(0.83, 0.83, 0.94, 1)
-shader_parameter/clouds_speed = 2.0
-shader_parameter/clouds_direction = 0.2
-shader_parameter/clouds_scale = 1.0
-shader_parameter/clouds_cutoff = 0.3
-shader_parameter/clouds_fuzziness = 0.5
-shader_parameter/clouds_weight = 0.0
-shader_parameter/clouds_blur = 0.25
-shader_parameter/stars_speed = 1.0
-shader_parameter/stars_scale = 1.0
-shader_parameter/stars_opacity = 1.0
-shader_parameter/overwritten_time = 0.0
-
-[sub_resource type="Sky" id="Sky_dwyb1"]
-sky_material = SubResource("ShaderMaterial_hhmbg")
-
-[sub_resource type="Environment" id="Environment_16gs8"]
-background_mode = 2
-sky = SubResource("Sky_dwyb1")
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_d6v31")
@@ -92,9 +51,6 @@ text = "Laugh-O-Meter"
 
 [node name="GameOverTimer" type="Timer" parent="."]
 autostart = true
-
-[node name="Sky" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_16gs8")
 
 [connection signal="body_entered" from="Sphere" to="." method="_on_sphere_body_entered"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
