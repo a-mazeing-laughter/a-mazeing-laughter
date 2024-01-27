@@ -1,2 +1,8 @@
 # Godot 4+ specific ignores
 .godot/
+
+# Export dir
+/dist
+
+# Release artifact
+/a-mazeing-laughter-ggj2024.zip
