@@ -6,3 +6,5 @@ Collect as many laughter on your way to make him happier and finally laugh while
 Control the ball with your arrow keys, it's as easy as that!
 
 Our contribution to #ggj24.
+
+Play it online: https://a-mazeing-laughter.github.io/a-mazeing-laughter
