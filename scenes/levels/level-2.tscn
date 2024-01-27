@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=3 uid="uid://bk76rd78vcc7j"]
+
+[ext_resource type="PackedScene" uid="uid://dexryaqplshdm" path="res://scenes/collectible/collectible.tscn" id="1_8f5be"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jixgh"]
+size = Vector3(6, 0.5, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wq5r0"]
+albedo_color = Color(0.113725, 0.356863, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ktgxr"]
+material = SubResource("StandardMaterial3D_wq5r0")
+size = Vector3(6, 0.5, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ce7b"]
+size = Vector3(12, 0.5, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j2l44"]
+material = SubResource("StandardMaterial3D_wq5r0")
+size = Vector3(12, 0.5, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0gblh"]
+size = Vector3(6, 0.5, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3i845"]
+material = SubResource("StandardMaterial3D_wq5r0")
+size = Vector3(6, 0.5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4xnjc"]
+size = Vector3(20, 0.5, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_toosa"]
+material = SubResource("StandardMaterial3D_wq5r0")
+size = Vector3(20, 0.5, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dvay2"]
+size = Vector3(6, 0.5, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p0782"]
+material = SubResource("StandardMaterial3D_wq5r0")
+size = Vector3(6, 0.5, 12)
+
+[node name="Level" type="Node3D"]
+
+[node name="Collectible" parent="." groups=["collectibles"] instance=ExtResource("1_8f5be")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, -14)
+
+[node name="Collectible2" parent="." groups=["collectibles"] instance=ExtResource("1_8f5be")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, -28)
+
+[node name="Section1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Section1"]
+shape = SubResource("BoxShape3D_jixgh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Section1"]
+mesh = SubResource("BoxMesh_ktgxr")
+skeleton = NodePath("../..")
+
+[node name="Section2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -14)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Section2"]
+shape = SubResource("BoxShape3D_5ce7b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Section2"]
+mesh = SubResource("BoxMesh_j2l44")
+skeleton = NodePath("../..")
+
+[node name="Section3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -21)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Section3"]
+shape = SubResource("BoxShape3D_0gblh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Section3"]
+mesh = SubResource("BoxMesh_3i845")
+skeleton = NodePath("../..")
+
+[node name="Section4" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -28)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Section4"]
+shape = SubResource("BoxShape3D_4xnjc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Section4"]
+mesh = SubResource("BoxMesh_toosa")
+skeleton = NodePath("../..")
+
+[node name="Section5" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -37)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Section5"]
+shape = SubResource("BoxShape3D_dvay2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Section5"]
+mesh = SubResource("BoxMesh_p0782")
+skeleton = NodePath("../..")

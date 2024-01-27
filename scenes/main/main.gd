@@ -3,7 +3,8 @@ extends Node3D
 var levelNode;
 var currentLevel = -1
 @onready var levels = [
-	preload("res://scenes/levels/level-1.tscn")
+	preload("res://scenes/levels/level-1.tscn"),
+	preload("res://scenes/levels/level-2.tscn")
 ]
 
 @onready var player = get_node("Sphere")
