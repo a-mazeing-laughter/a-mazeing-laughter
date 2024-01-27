@@ -22,13 +22,14 @@ func _ready():
 	next_level()
 
 func next_level():
-	inputVector = Vector3()
-		
 	if levelNode:
 		remove_child(levelNode)
 		levelNode.queue_free()
 		
+		player.set_linear_velocity(Vector3(0,0,0))
 		player.position = initialPlayerPosition
+		
+	inputVector = Vector3()
 
 	currentLevel += 1
 	levelNode = levels[currentLevel].instantiate()
