@@ -13,7 +13,6 @@ var currentLevel = -1
 var loosingScene = preload("res://scenes/main/loose.tscn").instantiate()
 
 var maxRotation = 0.3
-var rotationSpeed = 0.75
 var inputVector = Vector3()
 
 # Called when the node enters the scene tree for the first time.
@@ -45,32 +44,22 @@ func getInputVector():
 	var vector = Vector3()
 
 	if Input.is_action_pressed("ui_left"):
-		vector.z = 1
+		vector.x = -1
 	elif Input.is_action_pressed("ui_right"):
-		vector.z = -1
+		vector.x = 1
 
 	if Input.is_action_pressed("ui_up"):
-		vector.x = -1
+		vector.z = -1
 	elif Input.is_action_pressed("ui_down"):
-		vector.x = 1
+		vector.z = 1
 
 	return vector
 
 func adjustRotation(delta):
-	var diff = delta * rotationSpeed
+	var acceleration = delta * 1000
+	var camRotation = delta * 0.75
 
-	if inputVector.x == 0:
-		levelNode.rotation.x = lerp(levelNode.rotation.x, 0.0, diff)
-	else:
-		levelNode.rotation.x = clamp(levelNode.rotation.x + (diff * inputVector.x), -maxRotation, maxRotation)
-
-	if inputVector.z == 0:
-		levelNode.rotation.z = lerp(levelNode.rotation.z, 0.0, diff)
-	else:
-		levelNode.rotation.z = clamp(levelNode.rotation.z + (diff * inputVector.z), -maxRotation, maxRotation)
-		
-	boundary.rotation = levelNode.rotation
-
+	player.apply_force(inputVector * acceleration)
 
 func _on_sphere_body_entered(body):
 	if body == boundary:
