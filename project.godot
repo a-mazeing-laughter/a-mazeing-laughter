@@ -14,7 +14,7 @@ config/name="a mazeing laughter"
 run/main_scene="res://scenes/main/start.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/show_image=false
-config/icon="res://assets/favicon.png"
+config/icon="res://assets/logo-a-mazeing-laughter.png"
 
 [display]
 
