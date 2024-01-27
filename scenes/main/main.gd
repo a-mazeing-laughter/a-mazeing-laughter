@@ -65,6 +65,8 @@ func adjustRotation(delta):
 		levelNode.rotation.z = lerp(levelNode.rotation.z, 0.0, diff)
 	else:
 		levelNode.rotation.z = clamp(levelNode.rotation.z + (diff * inputVector.z), -maxRotation, maxRotation)
+		
+	boundary.rotation = levelNode.rotation
 
 
 func _on_sphere_body_entered(body):
