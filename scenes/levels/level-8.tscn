@@ -104,6 +104,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5, 0, 2)
 [node name="Block24" parent="Floor" instance=ExtResource("4_83wka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5, 0, -3)
 
+[node name="Block25" parent="Floor" instance=ExtResource("4_83wka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5, 0, 12)
+
+[node name="Block26" parent="Floor" instance=ExtResource("4_83wka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5, 0, 12)
+
 [node name="Block10" parent="Floor" instance=ExtResource("4_83wka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 15, -3)
 
