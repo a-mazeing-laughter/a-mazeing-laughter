@@ -7,85 +7,92 @@
 
 [node name="Level" type="Node3D"]
 
-[node name="Goal" parent="." groups=["collectibles"] instance=ExtResource("1_21koi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0.5, -44)
+[node name="Collectibles" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 
-[node name="Collectible" parent="." groups=["collectibles"] instance=ExtResource("2_ge5cp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, -14)
+[node name="Goal" parent="Collectibles" groups=["collectibles"] instance=ExtResource("1_21koi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, -44)
 
-[node name="Collectible2" parent="." groups=["collectibles"] instance=ExtResource("2_ge5cp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, -28.9519)
+[node name="Collectible" parent="Collectibles" groups=["collectibles"] instance=ExtResource("2_ge5cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -14)
 
-[node name="Avoidable" parent="." groups=["avoidables", "collectibles"] instance=ExtResource("3_o5vsm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.5, -14)
+[node name="Collectible2" parent="Collectibles" groups=["collectibles"] instance=ExtResource("2_ge5cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -28.9519)
 
-[node name="Avoidable2" parent="." groups=["avoidables", "collectibles"] instance=ExtResource("3_o5vsm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8503, 0.5, -23)
+[node name="Avoidable" parent="Collectibles" groups=["avoidables", "collectibles"] instance=ExtResource("3_o5vsm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -14)
 
-[node name="Level" type="Node3D" parent="."]
+[node name="Avoidable2" parent="Collectibles" groups=["avoidables", "collectibles"] instance=ExtResource("3_o5vsm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8503, 0, -23)
 
-[node name="Block" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -4.75, -3)
+[node name="Floor" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 
-[node name="Block2" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -4.75, -8)
+[node name="Block" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -3)
 
-[node name="Block3" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -4.75, -13)
+[node name="Block2" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -8)
 
-[node name="Block4" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -4.75, -18)
+[node name="Block3" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -13)
 
-[node name="Block5" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -4.75, -18)
+[node name="Block4" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -18)
 
-[node name="Block6" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -4.75, -18)
+[node name="Block5" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -18)
 
-[node name="Block7" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, -4.75, -18)
+[node name="Block6" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -18)
 
-[node name="Block8" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, -4.75, -23)
+[node name="Block7" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -18)
 
-[node name="Block9" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, -4.75, -28)
+[node name="Block8" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -23)
 
-[node name="Block10" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -4.75, -33)
+[node name="Block9" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -28)
 
-[node name="Block12" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -4.75, -33)
+[node name="Block10" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -33)
 
-[node name="Block13" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -4.75, -33)
+[node name="Block12" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -33)
 
-[node name="Block14" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -4.75, -33)
+[node name="Block13" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -33)
 
-[node name="Block15" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, -4.75, -33)
+[node name="Block14" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -33)
 
-[node name="Block19" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, -2, -28)
+[node name="Block15" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, -33)
 
-[node name="Block20" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -2, -28)
+[node name="Block16" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, -38)
 
-[node name="Block21" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -2, -28)
+[node name="Block17" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, -43)
 
-[node name="Block22" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -2, -28)
+[node name="Block18" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, -48)
 
-[node name="Block16" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, -4.75, -38)
+[node name="Block11" parent="Floor" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -33)
 
-[node name="Block17" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, -4.75, -43)
+[node name="Wall" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
-[node name="Block18" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, -4.75, -48)
+[node name="Block19" parent="Wall" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, -28)
 
-[node name="Block11" parent="Level" instance=ExtResource("4_qk01h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, -4.75, -33)
+[node name="Block20" parent="Wall" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -28)
+
+[node name="Block21" parent="Wall" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -28)
+
+[node name="Block22" parent="Wall" instance=ExtResource("4_qk01h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -28)

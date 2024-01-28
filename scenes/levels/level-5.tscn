@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b38ivosl6o8v4"]
+[gd_scene load_steps=7 format=3 uid="uid://crdrwfp53koki"]
 
 [ext_resource type="PackedScene" uid="uid://bts608o1wmhyg" path="res://scenes/collectible/goal/goal.tscn" id="1_884wu"]
 [ext_resource type="PackedScene" uid="uid://dexryaqplshdm" path="res://scenes/collectible/smile/collectible.tscn" id="2_l8g8s"]
@@ -9,80 +9,86 @@
 
 [node name="Level" type="Node3D"]
 
-[node name="Goal" parent="." groups=["collectibles"] instance=ExtResource("1_884wu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -41.5)
+[node name="Collectibles" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 
-[node name="Collectible" parent="." groups=["collectibles"] instance=ExtResource("2_l8g8s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, -4.5, -10.5)
+[node name="Goal" parent="Collectibles" groups=["collectibles"] instance=ExtResource("1_884wu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -41.5)
 
-[node name="Avoidable2" parent="." groups=["avoidables", "collectibles"] instance=ExtResource("3_wnsi5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.5, -30.5)
+[node name="Collectible" parent="Collectibles" groups=["collectibles"] instance=ExtResource("2_l8g8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, -5, -10.5)
 
-[node name="Block" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -5, -3)
+[node name="Avoidable2" parent="Collectibles" groups=["avoidables", "collectibles"] instance=ExtResource("3_wnsi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -30.5)
 
-[node name="Block2" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -5, -8)
+[node name="Collectible2" parent="Collectibles" groups=["collectibles"] instance=ExtResource("2_l8g8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, -10.5)
 
-[node name="Block3" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -5, -13)
+[node name="Collectible3" parent="Collectibles" groups=["collectibles"] instance=ExtResource("2_l8g8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -25.5)
 
-[node name="Block5" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -5, -13)
+[node name="Floor" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 
-[node name="Block7" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, -5, -13)
+[node name="Block" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -3)
 
-[node name="Block15" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, -5, -13)
+[node name="Block2" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -8)
 
-[node name="Block16" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, -5, -13)
+[node name="Block3" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -13)
 
-[node name="Block17" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, -5, -18)
+[node name="Block5" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -13)
 
-[node name="Block18" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, -5, -23)
+[node name="Block7" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, -13)
 
-[node name="Block19" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, -5, -28)
+[node name="Block15" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, -13)
 
-[node name="Block20" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, -5, -33)
+[node name="Block16" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, -13)
 
-[node name="Block21" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, -5, -33)
+[node name="Block17" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, -18)
 
-[node name="Block22" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -5, -33)
+[node name="Block18" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, -23)
 
-[node name="Block23" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -5, -33)
+[node name="Block19" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, -28)
 
-[node name="Block24" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -5, -33)
+[node name="Block20" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, -33)
 
-[node name="Block25" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -5, -38)
+[node name="Block21" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, -33)
 
-[node name="Block26" parent="." instance=ExtResource("4_sul1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -5, -43)
+[node name="Block22" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -33)
 
-[node name="RampRound" parent="." instance=ExtResource("5_ngqk6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -5, -13)
+[node name="Block23" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -33)
 
-[node name="RampRound2" parent="." instance=ExtResource("5_ngqk6")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.5, -5, -8)
+[node name="Block24" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -33)
 
-[node name="Ramp" parent="." instance=ExtResource("6_ef3sp")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 22.5, -5, -28)
+[node name="Block25" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -38)
 
-[node name="RampRound3" parent="." instance=ExtResource("5_ngqk6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, -5, -33)
+[node name="Block26" parent="Floor" instance=ExtResource("4_sul1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -43)
 
-[node name="Collectible2" parent="." groups=["collectibles"] instance=ExtResource("2_l8g8s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0.5, -10.5)
+[node name="RampRound" parent="Floor" instance=ExtResource("5_ngqk6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -13)
 
-[node name="Collectible3" parent="." groups=["collectibles"] instance=ExtResource("2_l8g8s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0.5, -25.5)
+[node name="RampRound2" parent="Floor" instance=ExtResource("5_ngqk6")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.5, 0, -8)
+
+[node name="Ramp" parent="Floor" instance=ExtResource("6_ef3sp")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 22.5, 0, -28)
+
+[node name="RampRound3" parent="Floor" instance=ExtResource("5_ngqk6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -33)
