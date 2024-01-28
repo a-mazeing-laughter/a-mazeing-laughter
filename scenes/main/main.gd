@@ -27,6 +27,7 @@ var currentLevel = -1
 	preload("res://assets/sounds/win1.wav"),
 	preload("res://assets/sounds/win2.wav"),
 ]
+@onready var winImage = preload("res://assets/happy.png")
 
 @onready var player = get_node("Sphere")
 @onready var spatial : Node3D = get_node("Sphere/Spatial")
@@ -70,6 +71,9 @@ func next_level():
 	Time taken: " + str(time) + " seconds
 
 		Press R to restart"
+		var image = endScene.get_node("Image")
+		image.texture = winImage
+		image.modulate = image.self_modulate
 		get_tree().paused = true
 		time = 0
 		currentLevel = 0
