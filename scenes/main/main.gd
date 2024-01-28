@@ -52,7 +52,8 @@ func next_level():
 		remove_child(levelNode)
 		levelNode.queue_free()
 
-		player.set_linear_velocity(Vector3(0,0,0))
+		player.set_linear_velocity(Vector3(0, 0, 0))
+		player.angular_velocity = Vector3(0, 0, 0)
 		player.position = initialPlayerPosition
 
 	inputVector = Vector3()
