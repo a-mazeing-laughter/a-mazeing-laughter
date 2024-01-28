@@ -123,6 +123,8 @@ func game_over():
 	get_tree().root.add_child(endScene)
 	endScene.get_node("EndText").text = "
 		 YOU LOOSE!
+Time taken: " + str(time) + " seconds
+
 	Press R to restart"
 	get_tree().paused = true
 	time = 0
