@@ -30,6 +30,7 @@ var currentLevel = -1
 var initialCameraRotation = deg_to_rad(-70.0)
 var maxRotation = 0.3
 var inputVector
+var time = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -55,9 +56,11 @@ func next_level():
 		endScene.get_node("EndText").text = "
 			 YOU WON!
 	 Laughometer left: " + str(laughometer.value) + "
+		  Time taken: " + str(time) + "
 
 		Press R to restart"
 		get_tree().paused = true
+		time = 0
 		currentLevel = 0
 
 	levelNode = levels[currentLevel].instantiate()
@@ -113,6 +116,7 @@ func game_over():
 		 YOU LOOSE!
 	Press R to restart"
 	get_tree().paused = true
+	time = 0
 
 func _on_sphere_body_entered(body):
 	if body == boundary:
@@ -135,6 +139,7 @@ func _on_sphere_body_entered(body):
 			smileSound.play()
 
 func _on_game_over_timer_timeout():
+	time += 1
 	laughometer.value -= 1;
 
 	if laughometer.value <= 0:
