@@ -7,6 +7,7 @@
 diffuse_mode = 1
 specular_mode = 1
 albedo_texture = ExtResource("1_altpj")
+uv1_scale = Vector3(0.6, 0.6, 0.6)
 uv1_triplanar = true
 uv1_triplanar_sharpness = 150.0
 
