@@ -127,8 +127,12 @@ func game_over():
 	var endScene = preload("res://scenes/main/end.tscn").instantiate()
 	get_tree().root.add_child(endScene)
 	endScene.get_node("EndText").text = "
-		 YOU LOOSE!
-Time taken: " + str(time) + " seconds
+		 YOU LOOSE!"
+	if laughometer.value > 0:
+		endScene.get_node("EndText").text += "
+   Laughometer left: " + str(laughometer.value)
+	endScene.get_node("EndText").text += "
+ Time taken: " + str(time) + " seconds
 
 	Press R to restart"
 	get_tree().paused = true
