@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/main/start.gd" id="1_lyqnp"]
 [ext_resource type="Texture2D" uid="uid://c5336ag8xo2uy" path="res://assets/startpage.png" id="2_6867e"]
-[ext_resource type="Texture2D" uid="uid://d1qcy1j1v3yos" path="res://assets/pink-button.png" id="3_n5pec"]
+[ext_resource type="Texture2D" uid="uid://b5p1arue6rpmd" path="res://assets/pink-button.png" id="3_n5pec"]
 
 [node name="Start" type="Node2D"]
 script = ExtResource("1_lyqnp")
