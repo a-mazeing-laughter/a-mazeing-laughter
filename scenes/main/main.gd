@@ -144,7 +144,7 @@ func _on_sphere_body_entered(body):
 			winPlayer.play()
 			next_level()
 		elif body.is_in_group("booster"):
-			player.apply_impulse(Vector3.FORWARD * 30)
+			player.apply_impulse(player.linear_velocity.normalized() * 30)
 		elif body.is_in_group("avoidables"):
 			laughometer.value -= 5
 			mockingPlayer.stream = mockingSound

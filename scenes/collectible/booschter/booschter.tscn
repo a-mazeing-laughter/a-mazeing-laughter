@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2eb7qnm66d8v"]
+[gd_scene load_steps=6 format=3 uid="uid://b2eb7qnm66d8v"]
 
 [ext_resource type="Texture2D" uid="uid://b8w5wae2losom" path="res://scenes/collectible/booschter/boost_Cylinder Base Color.png" id="1_1ojl7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mm5k4"]
+friction = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8p81n"]
 albedo_texture = ExtResource("1_1ojl7")
@@ -13,6 +16,7 @@ height = 0.2
 height = 0.5
 
 [node name="Booster" type="StaticBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_mm5k4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CylinderMesh_bcg6l")
