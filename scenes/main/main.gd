@@ -11,13 +11,15 @@ var currentLevel = -1
 	preload("res://scenes/levels/level-6.tscn"),
 ]
 
-@onready var smileSound : AudioStreamPlayer = get_node("BackgroundMusic/smileSound")
-@onready var lmaoSounds = [
+@onready var smilePlayer : AudioStreamPlayer = get_node("BackgroundMusic/smileSound")
+@onready var smileSounds = [
 	preload("res://assets/sounds/lmao1.wav"),
 	preload("res://assets/sounds/lmao2.wav"),
 	preload("res://assets/sounds/lmao3.wav"),
 	preload("res://assets/sounds/lmao4.wav"),
 ]
+@onready var mockingPlayer : AudioStreamPlayer = get_node("BackgroundMusic/mockingSound")
+@onready var mockingSound = preload("res://assets/sounds/mocking.wav")
 
 @onready var player = get_node("Sphere")
 @onready var spatial : Node3D = get_node("Sphere/Spatial")
@@ -133,10 +135,12 @@ func _on_sphere_body_entered(body):
 			player.apply_impulse(Vector3.FORWARD * 30)
 		elif body.is_in_group("avoidables"):
 			laughometer.value -= 5
+			mockingPlayer.stream = mockingSound
+			mockingPlayer.play()
 		else:
 			laughometer.value += 5
-			smileSound.stream = lmaoSounds[randi_range(0, lmaoSounds.size() - 1)]
-			smileSound.play()
+			smilePlayer.stream = smileSounds[randi_range(0, smileSounds.size() - 1)]
+			smilePlayer.play()
 
 func _on_game_over_timer_timeout():
 	time += 1
