@@ -9,6 +9,7 @@ var currentLevel = -1
 	preload("res://scenes/levels/level-4.tscn"),
 	preload("res://scenes/levels/level-5.tscn"),
 	preload("res://scenes/levels/level-6.tscn"),
+	preload("res://scenes/levels/level-8.tscn"),
 ]
 
 @onready var smileSound : AudioStreamPlayer = get_node("BackgroundMusic/smileSound")
