@@ -19,6 +19,8 @@ uv1_scale = Vector3(6, 6, 6)
 material = SubResource("StandardMaterial3D_nlskk")
 size = Vector2(200, 200)
 
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_bk0w2"]
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_d6v31")
 
@@ -51,6 +53,9 @@ mesh = SubResource("PlaneMesh_88vqn")
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_q08y7")
 autoplay = true
+
+[node name="smileSound" type="AudioStreamPlayer" parent="BackgroundMusic"]
+stream = SubResource("AudioStreamWAV_bk0w2")
 
 [node name="Laughometer" type="ProgressBar" parent="."]
 offset_right = 171.0

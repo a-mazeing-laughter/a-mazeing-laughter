@@ -11,6 +11,14 @@ var currentLevel = -1
 	preload("res://scenes/levels/level-6.tscn"),
 ]
 
+@onready var smileSound : AudioStreamPlayer = get_node("BackgroundMusic/smileSound")
+@onready var lmaoSounds = [
+	preload("res://assets/sounds/lmao1.wav"),
+	preload("res://assets/sounds/lmao2.wav"),
+	preload("res://assets/sounds/lmao3.wav"),
+	preload("res://assets/sounds/lmao4.wav"),
+]
+
 @onready var player = get_node("Sphere")
 @onready var spatial : Node3D = get_node("Sphere/Spatial")
 @onready var camera : Camera3D = get_node("Sphere/Spatial/Camera3D")
@@ -25,6 +33,7 @@ var inputVector
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize()
 	laughometer.value = 30
 	next_level()
 
@@ -107,10 +116,12 @@ func _on_sphere_body_entered(body):
 			next_level()
 		elif body.is_in_group("booster"):
 			player.apply_impulse(Vector3.FORWARD * 30)
+		elif body.is_in_group("avoidables"):
+			laughometer.value -= 5
 		else:
-			var points = -5 if body.is_in_group("avoidables") else 5
-			laughometer.value += points
-
+			laughometer.value += 5
+			smileSound.stream = lmaoSounds[randi_range(0, lmaoSounds.size() - 1)]
+			smileSound.play()
 
 func _on_game_over_timer_timeout():
 	laughometer.value -= 1;
