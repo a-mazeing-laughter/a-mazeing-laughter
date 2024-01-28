@@ -55,6 +55,7 @@ func next_level():
 		player.set_linear_velocity(Vector3(0, 0, 0))
 		player.angular_velocity = Vector3(0, 0, 0)
 		player.position = initialPlayerPosition
+		spatial.rotation = Vector3(0, 0, 0)
 
 	inputVector = Vector3()
 

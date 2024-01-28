@@ -10,13 +10,13 @@
 [node name="Collectibles" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 
-[node name="Collectible" parent="Collectibles" groups=["collectibles"] instance=ExtResource("1_iadx7")]
+[node name="Collectible" parent="Collectibles" instance=ExtResource("1_iadx7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -10.5)
 
-[node name="Avoidable" parent="Collectibles" groups=["avoidables", "collectibles"] instance=ExtResource("3_v62tr")]
+[node name="Avoidable" parent="Collectibles" groups=["avoidables"] instance=ExtResource("3_v62tr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
 
-[node name="Avoidable2" parent="Collectibles" groups=["avoidables", "collectibles"] instance=ExtResource("3_v62tr")]
+[node name="Avoidable2" parent="Collectibles" groups=["avoidables"] instance=ExtResource("3_v62tr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
 
 [node name="Goal" parent="Collectibles" groups=["collectibles"] instance=ExtResource("2_3dftw")]
