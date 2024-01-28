@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_d6v31"]
 [ext_resource type="PackedScene" uid="uid://bsfbxbscpn5b4" path="res://scenes/player-sphere/player-sphere.tscn" id="2_alp3d"]
-[ext_resource type="Texture2D" uid="uid://3o3ox7a7ce56" path="res://assets/background.png" id="3_ahr0t"]
+[ext_resource type="Texture2D" uid="uid://dmehsfr6wn16b" path="res://assets/background.png" id="3_ahr0t"]
 [ext_resource type="AudioStream" uid="uid://dro7ngmtk6xgy" path="res://assets/Silly Fun.mp3" id="3_q08y7"]
 [ext_resource type="Texture2D" uid="uid://dpppnfb6y8b0m" path="res://assets/touchbuttons/buttonLeft.png" id="4_u7uri"]
 [ext_resource type="Texture2D" uid="uid://c0xky565a1tlb" path="res://assets/touchbuttons/buttonRight.png" id="5_sbt0e"]
@@ -13,11 +13,12 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nlskk"]
 albedo_texture = ExtResource("3_ahr0t")
-uv1_scale = Vector3(6, 6, 6)
+uv1_scale = Vector3(12, 12, 12)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_88vqn"]
+lightmap_size_hint = Vector2i(1502, 1502)
 material = SubResource("StandardMaterial3D_nlskk")
-size = Vector2(200, 200)
+size = Vector2(400, 400)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_d6v31")
