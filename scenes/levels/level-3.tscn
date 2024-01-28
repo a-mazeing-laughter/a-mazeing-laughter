@@ -14,16 +14,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 [node name="Goal" parent="Collectibles" groups=["collectibles"] instance=ExtResource("1_krth2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.36142, 0, -42)
 
-[node name="Collectible" parent="Collectibles" groups=["collectibles"] instance=ExtResource("2_5d3rk")]
+[node name="Collectible" parent="Collectibles" instance=ExtResource("2_5d3rk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -14)
 
-[node name="Collectible2" parent="Collectibles" groups=["collectibles"] instance=ExtResource("2_5d3rk")]
+[node name="Collectible2" parent="Collectibles" instance=ExtResource("2_5d3rk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.01071, 0, -28)
 
-[node name="Avoidable" parent="Collectibles" groups=["avoidables", "collectibles"] instance=ExtResource("3_0ia8x")]
+[node name="Avoidable" parent="Collectibles" groups=["avoidables"] instance=ExtResource("3_0ia8x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -14)
 
-[node name="Avoidable2" parent="Collectibles" groups=["avoidables", "collectibles"] instance=ExtResource("3_0ia8x")]
+[node name="Avoidable2" parent="Collectibles" groups=["avoidables"] instance=ExtResource("3_0ia8x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -23)
 
 [node name="Floor" type="Node3D" parent="."]

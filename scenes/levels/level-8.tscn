@@ -11,22 +11,22 @@
 [node name="Collectibles" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 
-[node name="Collectible" parent="Collectibles" groups=["collectibles"] instance=ExtResource("1_lcxt6")]
+[node name="Collectible" parent="Collectibles" instance=ExtResource("1_lcxt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.026, 10, -0.242)
 
-[node name="Collectible2" parent="Collectibles" groups=["collectibles"] instance=ExtResource("1_lcxt6")]
+[node name="Collectible2" parent="Collectibles" instance=ExtResource("1_lcxt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0528755, 20, -10.6118)
 
-[node name="Collectible4" parent="Collectibles" groups=["collectibles"] instance=ExtResource("1_lcxt6")]
+[node name="Collectible4" parent="Collectibles" instance=ExtResource("1_lcxt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.373, 20, -0.861357)
 
-[node name="Collectible3" parent="Collectibles" groups=["collectibles"] instance=ExtResource("1_lcxt6")]
+[node name="Collectible3" parent="Collectibles" instance=ExtResource("1_lcxt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.0076, 0, 12)
 
-[node name="Avoidable" parent="Collectibles" groups=["avoidables", "collectibles"] instance=ExtResource("2_du6s0")]
+[node name="Avoidable" parent="Collectibles" groups=["avoidables"] instance=ExtResource("2_du6s0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.2682, 0, 3.60563)
 
-[node name="Avoidable2" parent="Collectibles" groups=["avoidables", "collectibles"] instance=ExtResource("2_du6s0")]
+[node name="Avoidable2" parent="Collectibles" groups=["avoidables"] instance=ExtResource("2_du6s0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82363, 20, 13.1221)
 
 [node name="Goal" parent="Collectibles" groups=["collectibles"] instance=ExtResource("3_eex70")]
