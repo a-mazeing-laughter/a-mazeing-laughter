@@ -1,2 +1,2 @@
 - "Silly Fun" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 3.0 http://creativecommons.org/licenses/by/3.0
-- "LMAO 4 bursts" by Mafon2 Licensed under Creative Commons: By Attribution 4.0 https://creativecommons.org/licenses/by/4.0/
+- "LMAO 4 bursts" by Mafon2 (https://freesound.org/people/Mafon2/sounds/253598/) Licensed under Creative Commons: By Attribution 4.0 https://creativecommons.org/licenses/by/4.0/
