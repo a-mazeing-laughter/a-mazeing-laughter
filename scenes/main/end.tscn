@@ -13,6 +13,7 @@ offset_left = 171.0
 offset_top = 275.0
 offset_right = 599.0
 offset_bottom = 439.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "
          YOU LOOSE!
     Press R to restart"
