@@ -71,6 +71,9 @@ func next_level():
 		time = 0
 		currentLevel = 0
 
+		winPlayer.stream = winSounds[randi_range(0, winSounds.size() - 1)]
+		winPlayer.play()
+
 	levelNode = levels[currentLevel].instantiate()
 	add_child(levelNode)
 
