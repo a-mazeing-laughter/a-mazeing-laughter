@@ -7,47 +7,50 @@
 
 [node name="Level" type="Node3D"]
 
-[node name="Collectible" parent="." groups=["collectibles"] instance=ExtResource("1_iadx7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, -10.5)
+[node name="Collectibles" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 
-[node name="Goal" parent="." groups=["collectibles"] instance=ExtResource("2_3dftw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -35)
+[node name="Collectible" parent="Collectibles" groups=["collectibles"] instance=ExtResource("1_iadx7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -10.5)
 
-[node name="Avoidable" parent="." groups=["avoidables", "collectibles"] instance=ExtResource("3_v62tr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -15)
+[node name="Avoidable" parent="Collectibles" groups=["avoidables", "collectibles"] instance=ExtResource("3_v62tr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
 
-[node name="Avoidable2" parent="." groups=["avoidables", "collectibles"] instance=ExtResource("3_v62tr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -25)
+[node name="Avoidable2" parent="Collectibles" groups=["avoidables", "collectibles"] instance=ExtResource("3_v62tr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
 
-[node name="Level" type="Node3D" parent="."]
+[node name="Goal" parent="Collectibles" groups=["collectibles"] instance=ExtResource("2_3dftw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -35)
+
+[node name="Floor" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 
-[node name="Block" parent="Level" instance=ExtResource("4_r12w8")]
+[node name="Block" parent="Floor" instance=ExtResource("4_r12w8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -3)
 
-[node name="Block2" parent="Level" instance=ExtResource("4_r12w8")]
+[node name="Block2" parent="Floor" instance=ExtResource("4_r12w8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -8)
 
-[node name="Block3" parent="Level" instance=ExtResource("4_r12w8")]
+[node name="Block3" parent="Floor" instance=ExtResource("4_r12w8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -13)
 
-[node name="Block9" parent="Level" instance=ExtResource("4_r12w8")]
+[node name="Block9" parent="Floor" instance=ExtResource("4_r12w8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -13)
 
-[node name="Block10" parent="Level" instance=ExtResource("4_r12w8")]
+[node name="Block10" parent="Floor" instance=ExtResource("4_r12w8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -13)
 
-[node name="Block4" parent="Level" instance=ExtResource("4_r12w8")]
+[node name="Block4" parent="Floor" instance=ExtResource("4_r12w8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -18)
 
-[node name="Block5" parent="Level" instance=ExtResource("4_r12w8")]
+[node name="Block5" parent="Floor" instance=ExtResource("4_r12w8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -23)
 
-[node name="Block6" parent="Level" instance=ExtResource("4_r12w8")]
+[node name="Block6" parent="Floor" instance=ExtResource("4_r12w8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -28)
 
-[node name="Block7" parent="Level" instance=ExtResource("4_r12w8")]
+[node name="Block7" parent="Floor" instance=ExtResource("4_r12w8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -33)
 
-[node name="Block8" parent="Level" instance=ExtResource("4_r12w8")]
+[node name="Block8" parent="Floor" instance=ExtResource("4_r12w8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -38)
