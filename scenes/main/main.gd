@@ -50,6 +50,14 @@ func next_level():
 	currentLevel += 1
 
 	if currentLevel >= levels.size():
+		var endScene = preload("res://scenes/main/end.tscn").instantiate()
+		get_tree().root.add_child(endScene)
+		endScene.get_node("EndText").text = "
+			 YOU WON!
+	 Laughometer left: " + str(laughometer.value) + "
+
+		Press R to restart"
+		get_tree().paused = true
 		currentLevel = 0
 
 	levelNode = levels[currentLevel].instantiate()
@@ -99,8 +107,11 @@ func adjustRotation(delta):
 
 
 func game_over():
-	var loosingScene = preload("res://scenes/main/loose.tscn").instantiate()
-	get_tree().root.add_child(loosingScene)
+	var endScene = preload("res://scenes/main/end.tscn").instantiate()
+	get_tree().root.add_child(endScene)
+	endScene.get_node("EndText").text = "
+		 YOU LOOSE!
+	Press R to restart"
 	get_tree().paused = true
 
 func _on_sphere_body_entered(body):
