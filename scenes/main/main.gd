@@ -125,6 +125,9 @@ func game_over():
 	get_tree().paused = true
 	time = 0
 
+	mockingPlayer.stream = mockingSound
+	mockingPlayer.play()
+
 func _on_sphere_body_entered(body):
 	if body == boundary:
 		# YOU LOSE
