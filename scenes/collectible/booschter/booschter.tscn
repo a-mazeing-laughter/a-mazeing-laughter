@@ -15,7 +15,7 @@ height = 0.2
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5vc0i"]
 height = 0.5
 
-[node name="Booster" type="StaticBody3D"]
+[node name="Booster" type="StaticBody3D" groups=["booster"]]
 physics_material_override = SubResource("PhysicsMaterial_mm5k4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
