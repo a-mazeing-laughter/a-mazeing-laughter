@@ -12,12 +12,19 @@ var currentLevel = -1
 	preload("res://scenes/levels/level-8.tscn"),
 ]
 
-@onready var smileSound : AudioStreamPlayer = get_node("BackgroundMusic/smileSound")
-@onready var lmaoSounds = [
+@onready var smilePlayer : AudioStreamPlayer = get_node("BackgroundMusic/smileSound")
+@onready var smileSounds = [
 	preload("res://assets/sounds/lmao1.wav"),
 	preload("res://assets/sounds/lmao2.wav"),
 	preload("res://assets/sounds/lmao3.wav"),
 	preload("res://assets/sounds/lmao4.wav"),
+]
+@onready var mockingPlayer : AudioStreamPlayer = get_node("BackgroundMusic/mockingSound")
+@onready var mockingSound = preload("res://assets/sounds/mocking.wav")
+@onready var winPlayer : AudioStreamPlayer = get_node("BackgroundMusic/winSound")
+@onready var winSounds = [
+	preload("res://assets/sounds/win1.wav"),
+	preload("res://assets/sounds/win2.wav"),
 ]
 
 @onready var player = get_node("Sphere")
@@ -57,7 +64,7 @@ func next_level():
 		endScene.get_node("EndText").text = "
 			 YOU WON!
 	 Laughometer left: " + str(laughometer.value) + "
-		  Time taken: " + str(time) + "
+	Time taken: " + str(time) + " seconds
 
 		Press R to restart"
 		get_tree().paused = true
@@ -70,6 +77,8 @@ func next_level():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	inputVector = getInputVector()
+	if Input.is_action_pressed("ui_r_key"):
+		get_tree().reload_current_scene()
 
 func _physics_process(delta):
 	var acceleration = delta * 1000
@@ -115,9 +124,14 @@ func game_over():
 	get_tree().root.add_child(endScene)
 	endScene.get_node("EndText").text = "
 		 YOU LOOSE!
+Time taken: " + str(time) + " seconds
+
 	Press R to restart"
 	get_tree().paused = true
 	time = 0
+
+	mockingPlayer.stream = mockingSound
+	mockingPlayer.play()
 
 func _on_sphere_body_entered(body):
 	if body == boundary:
@@ -129,15 +143,19 @@ func _on_sphere_body_entered(body):
 		body.queue_free()
 
 		if body.name == "Goal":
+			winPlayer.stream = winSounds[randi_range(0, winSounds.size() - 1)]
+			winPlayer.play()
 			next_level()
 		elif body.is_in_group("booster"):
-			player.apply_impulse(Vector3.FORWARD * 30)
+			player.apply_impulse(player.linear_velocity.normalized() * 30)
 		elif body.is_in_group("avoidables"):
 			laughometer.value -= 5
+			mockingPlayer.stream = mockingSound
+			mockingPlayer.play()
 		else:
 			laughometer.value += 5
-			smileSound.stream = lmaoSounds[randi_range(0, lmaoSounds.size() - 1)]
-			smileSound.play()
+			smilePlayer.stream = smileSounds[randi_range(0, smileSounds.size() - 1)]
+			smilePlayer.play()
 
 func _on_game_over_timer_timeout():
 	time += 1
