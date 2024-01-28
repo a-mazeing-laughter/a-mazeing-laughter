@@ -76,6 +76,8 @@ func next_level():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	inputVector = getInputVector()
+	if Input.is_action_pressed("ui_r_key"):
+		get_tree().reload_current_scene()
 
 func _physics_process(delta):
 	var acceleration = delta * 1000
