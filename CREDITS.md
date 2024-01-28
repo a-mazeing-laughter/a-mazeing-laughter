@@ -1,3 +1,5 @@
 - "Silly Fun" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 3.0 http://creativecommons.org/licenses/by/3.0
 - "LMAO 4 bursts" by Mafon2 (https://freesound.org/people/Mafon2/sounds/253598/) Licensed under Creative Commons: Attribution 4.0 https://creativecommons.org/licenses/by/4.0/
 - "11465 clown mocking voice 1.wav" by Robinhood76 (https://freesound.org/people/Robinhood76/sounds/671649/) Licensed under Creative Commons: Attribution NonCommercial 4.0 https://creativecommons.org/licenses/by-nc/4.0/
+- "minion_yahoo_1.wav" by yummie (https://freesound.org/people/yummie/sounds/209737/) Licensed under Creative Commons: Attribution 4.0 https://creativecommons.org/licenses/by/4.0/
+- "Woo 1 just guys.wav" by jayfrosting (https://freesound.org/people/jayfrosting/sounds/333418/) Licensed under Creative Commons: Zero http://creativecommons.org/publicdomain/zero/1.0/

@@ -24,6 +24,8 @@ size = Vector2(400, 400)
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_k0soc"]
 
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_iukw7"]
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_d6v31")
 
@@ -62,6 +64,9 @@ stream = SubResource("AudioStreamWAV_bk0w2")
 
 [node name="mockingSound" type="AudioStreamPlayer" parent="BackgroundMusic"]
 stream = SubResource("AudioStreamWAV_k0soc")
+
+[node name="winSound" type="AudioStreamPlayer" parent="BackgroundMusic"]
+stream = SubResource("AudioStreamWAV_iukw7")
 
 [node name="Laughometer" type="ProgressBar" parent="."]
 offset_right = 171.0

@@ -20,6 +20,11 @@ var currentLevel = -1
 ]
 @onready var mockingPlayer : AudioStreamPlayer = get_node("BackgroundMusic/mockingSound")
 @onready var mockingSound = preload("res://assets/sounds/mocking.wav")
+@onready var winPlayer : AudioStreamPlayer = get_node("BackgroundMusic/winSound")
+@onready var winSounds = [
+	preload("res://assets/sounds/win1.wav"),
+	preload("res://assets/sounds/win2.wav"),
+]
 
 @onready var player = get_node("Sphere")
 @onready var spatial : Node3D = get_node("Sphere/Spatial")
@@ -130,6 +135,8 @@ func _on_sphere_body_entered(body):
 		body.queue_free()
 
 		if body.name == "Goal":
+			winPlayer.stream = winSounds[randi_range(0, winSounds.size() - 1)]
+			winPlayer.play()
 			next_level()
 		elif body.is_in_group("booster"):
 			player.apply_impulse(Vector3.FORWARD * 30)
