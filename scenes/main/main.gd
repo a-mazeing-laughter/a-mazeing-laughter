@@ -58,7 +58,7 @@ func next_level():
 		endScene.get_node("EndText").text = "
 			 YOU WON!
 	 Laughometer left: " + str(laughometer.value) + "
-		  Time taken: " + str(time) + "
+	Time taken: " + str(time) + " seconds
 
 		Press R to restart"
 		get_tree().paused = true
